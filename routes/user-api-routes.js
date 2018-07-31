@@ -11,7 +11,7 @@ module.exports = function(app) {
     app.get("/api/users/:id", function(req, res) {
         db.User.findOne({
             where: {
-                id:req.params.id
+                userId:req.params.id
             },
             include: [{all: true}]
         }).then(function(dbUser) {
@@ -24,7 +24,7 @@ module.exports = function(app) {
             req.body,
             {
                 where: {
-                    id: req.body.id
+                    userId: req.body.id
                 }
             }).then(function(dbUser) {
                 res.json(dbUser)
@@ -35,7 +35,7 @@ module.exports = function(app) {
     app.delete("api/user/:id", function(req, res) {
         db.User.destroy({
             where: {
-                id: req.params.id
+                userId: req.params.id
             }
         })
     })
