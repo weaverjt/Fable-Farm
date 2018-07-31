@@ -1,4 +1,4 @@
-USE farble_db;
+USE fable_db;
 INSERT INTO categories (catName) VALUES ("Fantasy");
 INSERT INTO categories  (catName) VALUES ("Sci-fi");
 INSERT INTO categories (catName) VALUES ("Horror");
