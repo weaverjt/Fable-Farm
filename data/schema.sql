@@ -1,9 +1,9 @@
 -- Drops the todolist if it exists currently --
-DROP DATABASE IF EXISTS fable_db;
+DROP DATABASE IF EXISTS sequelize_fable;
 -- Creates the "todolist" database --
-CREATE DATABASE fable_db;
+CREATE DATABASE sequelize_fable;
 
-USE fable_db;
+USE sequelize_fable;
 
 CREATE TABLE users (
 		userId INT AUTO_INCREMENT NOT NULL,
@@ -19,17 +19,16 @@ CREATE TABLE stories (
         userId   INT NOT NULL,
         catId	INT NOT NULL,
         createAt TIMESTAMP,
-        IsEnd BOOLEAN NOT NULL,
+        IsEnd BOOLEAN default 0,
         PRIMARY KEY (storyId)
 );
 
 CREATE TABLE fragments (
 		fragmentId INT AUTO_INCREMENT NOT NULL,
         fragmentText VARCHAR(255) NOT NULL,
-        status	BOOLEAN NOT NULL,
+        status	BOOLEAN default 0,
         previousId INT NOT NULL,
         userId  INT NOT NULL,
-        storyId INT NOT NULL,
 		createAt TIMESTAMP,
         
         PRIMARY KEY (fragmentId)
@@ -39,7 +38,6 @@ CREATE TABLE characters (
 		characterId INT AUTO_INCREMENT NOT NULL,
         charName VARCHAR(255) NOT NULL,
         userId	INT NOT NULL,
-        stories INT NOT NULL,
 		createAt TIMESTAMP,
         PRIMARY KEY (characterId)
 );
