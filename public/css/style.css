@@ -8,9 +8,47 @@
         box-sizing: border-box;
     }
 
-    /* style the container */
+    
+    /* The navigation bar */
+    .sidenav {
+        height: 100%;
+        width: 160px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        padding-top: 20px;
+    }
+    
+    .sidenav a {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+    }
+    
+    .sidenav a:hover {
+        color: #f1f1f1;
+    }
+    
+    .main {
+        margin-left: 160px; /* Same as the width of the sidenav */
+        font-size: 28px; /* Increased text to enable scrolling */
+        padding: 0px 10px;
+    }
+    
+    @media screen and (max-height: 450px) {
+        .sidenav {padding-top: 15px;}
+        .sidenav a {font-size: 18px;}
+    }
+   
 
-    .container {
+/* ------------------------------------- */        
+        /* style the login container */
+    #authForm {
         position: relative;
         border-radius: 5px;
         background-color: #f2f2f2;
@@ -38,9 +76,6 @@
     .btn:hover {
         opacity: 1;
     }
-
-
-  
 
     /* style the submit button */
 
@@ -100,63 +135,8 @@
         display: none;
     }
 
-    /* bottom container */
 
-    .bottom-container {
-        text-align: center;
-        background-color: #666;
-        border-radius: 0px 0px 4px 4px;
-    }
-
-    /* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
-
-    @media screen and (max-width: 650px) {
-        .col {
-            width: 100%;
-            margin-top: 0;
-        }
-        /* hide the vertical line */
-        .vl {
-            display: none;
-        }
-        /* show the hidden text on small screens */
-        .hide-md-lg {
-            display: block;
-            text-align: center;
-        }
-    }
-    /* The navigation bar */
-.navbar {
-overflow: hidden;
-background-color: #333;
-position: fixed; /* Set the navbar to fixed position */
-top: 0; /* Position the navbar at the top of the page */
-width: 100%; /* Full width */
-}
-
-/* Links inside the navbar */
-.navbar a {
-float: left;
-display: block;
-color: #f2f2f2;
-text-align: center;
-padding: 14px 16px;
-text-decoration: none;
-}
-
-/* Change background on mouse-over */
-.navbar a:hover {
-background: #ddd;
-color: black;
-}
-
-/* Main content */
-.main {
-margin-top: 30px; /* Add a top margin to avoid content overlay */
-} 
-
-
-
+/* ---------------------------- */
 /* Profile img(personal picture or avatar)
 Profile background  */
 /* some code to maybe but the prof img over the background img
@@ -177,3 +157,23 @@ Profile background  */
   z-index: 9;  
 }
  */
+/* --------------------------- */
+
+
+    /* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
+
+    @media screen and (max-width: 650px) {
+        .col {
+            width: 100%;
+            margin-top: 0;
+        }
+        /* hide the vertical line */
+        .vl {
+            display: none;
+        }
+        /* show the hidden text on small screens */
+        .hide-md-lg {
+            display: block;
+            text-align: center;
+        }
+    }

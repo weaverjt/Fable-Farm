@@ -14,6 +14,10 @@ firebase.initializeApp(config);
 const database = firebase.database()
 const auth = firebase.auth()
 
+
+/* use this variable to hide/show the authForm background */
+const authForm = document.getElementById('authForm')
+
 // Access the values from the html sign up and log in form
 const loginForm = document.getElementById('login')
 const loginEmail = document.getElementById('login-email')
@@ -72,25 +76,10 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
     loginForm.classList.add('hide')
     signUpForm.classList.add('hide')
     logoutButton.classList.remove('hide')
+    authForm.classList.add('hide')
    /*  status.innerHTML = 'Status: <span class="status-green">logged in</span>' */
     uid = firebaseUser.uid
     localStorage.setItem("uid", uid) 
-   
-
-    // Use the UID to get authorized data
- /*    database.ref('/to-do-list').orderByChild('uid').equalTo(uid).on("value", (snapshot) => {
-      document.getElementById('to-do-list-items').innerHTML = ""
-      snapshot.forEach(data => {
-        var p = document.createElement('p')
-        p.textContent = data.val().item
-        var deleteButton = document.createElement('button')
-        deleteButton.textContent = 'x'
-        deleteButton.classList.add('delete-button')
-        deleteButton.setAttribute('data', data.key)
-        p.appendChild(deleteButton)
-        document.getElementById('to-do-list-items').appendChild(p)
-      })
-    }) */
 
   } else {
 
@@ -103,25 +92,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
  /*    status.innerHTML = 'Status: <span class="status-red">not logged in</span>' */
   }
 })
-/* 
-// delete event
-document.body.addEventListener("click", function(event) {
-  if (event.target.matches(".delete-button")) {
-    key = event.target.getAttribute("data")
-    database.ref('/to-do-list').child(key).remove()
-  }
-}) */
-/* 
-// add event
-addItemForm.addEventListener('submit', (e) => {
-  e.preventDefault()
-  var item = document.getElementById('item').value
-  database.ref('/to-do-list').push({
-    item: item,
-    uid: uid
-  })
-  addItemForm.reset()
-}) */
+
 
 var displayError = (message) => {
   console.log('this happened');

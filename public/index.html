@@ -8,13 +8,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/style.css">
 
 </head>
 
 <body>
 
-    <nav class="navbar navbar-left" role="navigation">
+    <nav class="sidenav" role="navigation">
         <div class="container-fluid">
             <ul class="nav navbar-nav">
                 <li class="active">
@@ -29,23 +29,24 @@
                     <a href="profile.html">Profile</a>
                 </li>
                 <li>
-                    <a id="logout-button">Log out</a> 
+                    <a id="logout-button">Log out</a>
                 </li>
-                
+
             </ul>
         </div>
     </nav>
 
 
-<!-- add show/hide functionality so that the login goes away if a  user is signed in -->
+    <!-- add show/hide functionality so that the login goes away if a  user is signed in -->
+
     <body>
         <div class="container" style="margin-top: 100px">
-            <form>
+            <form id="authForm">
                 <div class="row" id="accountForm">
                     <h2 style="text-align:center">Login or sign up</h2>
                     <div class="vl">
                         <span class="vl-innertext">or</span>
-                    </div>                   
+                    </div>
 
                     <div class="col">
                         <div class="hide-md-lg">
@@ -57,48 +58,55 @@
                         <input type="submit" id="login" value="Login">
 
                         <div class="col">
-                                <a href="#" style="color:blue" class="btn">Forgot password?</a>
-                            </div>
+                            <a href="#" style="color:blue" class="btn">Forgot password?</a>
+                        </div>
                     </div>
 
                     <div class="col" id="sign-up">
-                            <input type="text" name="username" id="sign-up-email" placeholder="Username">
-                            <input type="password" name="password" id="sign-up-password" placeholder="Password">
-                            <input type="submit" value="Create Account">
-                          </div>
+                        <input type="text" name="username" id="sign-up-email" placeholder="Username">
+                        <input type="password" name="password" id="sign-up-password" placeholder="Password">
+                        <input type="submit" value="Create Account">
+                    </div>
 
                 </div>
             </form>
 
-            
+            <!-- Home page -->
+
             <div class="row">
-                    <div class="col-md-6">
-                        list of top ten most popular stories 
-                    </div>
+                <div class="col-md-6">
+                  <!--   list of top ten most popular stories (in a small header bar that hovers at the top of the screen) -->
+                  <header>Top Ten Stories!</header>
                 </div>
-        <div class="row">
-            <div class="col-md-6">
-                <h3>some about shit</h3>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <p>some example maybe??</p>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>About | Fable Farm</h3>
+                    <p>Fable Farm is a unique website that allows our users to write in tandem with a community of friends! <br>
+                    With 
+                    </p>
+                </div>
             </div>
-        </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <p>some example maybe??</p>
+                </div>
+            </div>
 
         </div>
 
-        
 
-        
+
+
 
 
 
 
         <!-- Firebase and app -->
         <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
-       <script src="../app.js" charset="utf-8"></script>
+        <script src="../app.js" charset="utf-8"></script>
     </body>
 
 </html>
