@@ -8,11 +8,6 @@ module.exports = function (app) {
         }).then(function (dbCharacter) {
             res.json(dbCharacter);
         })
-<<<<<<< HEAD
-    .then(function(dbCharacter) {
-        res.json(dbCharacter);
-=======
->>>>>>> 1c5014fb3e69ed5dabbd05e8d2cbe58e67522425
     });
 
     app.post("/api/characters", function (req, res) {
