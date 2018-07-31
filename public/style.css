@@ -39,8 +39,22 @@
         opacity: 1;
     }
 
+    /* add appropriate colors to fb, twitter and google buttons */
 
-  
+    .fb {
+        background-color: #3B5998;
+        color: white;
+    }
+
+    .twitter {
+        background-color: #55ACEE;
+        color: white;
+    }
+
+    .google {
+        background-color: #dd4b39;
+        color: white;
+    }
 
     /* style the submit button */
 
@@ -154,26 +168,3 @@ color: black;
 .main {
 margin-top: 30px; /* Add a top margin to avoid content overlay */
 } 
-
-
-
-/* Profile img(personal picture or avatar)
-Profile background  */
-/* some code to maybe but the prof img over the background img
-.frame{
-  position:relative;
-}
-.frame img{
-  width: 100%;
-  position:absolute;
-}
-.frame img#gabe{
-  z-index: 10; 
-  top: 50px;
-  left: 50px;
-  opacity: 0.5;
-}
-.frame img#hl3{
-  z-index: 9;  
-}
- */
