@@ -2,7 +2,7 @@ module.exports = function(sequelize, DataTypes) {
     var Character = sequelize.define("Character", {
       // Giving the Author model a name of type STRING
       charName : DataTypes.STRING,
-      stories   : DataTypes.STRING,
+  
      
     });
    // association with USER

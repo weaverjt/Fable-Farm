@@ -9,31 +9,34 @@ module.exports = function (app) {
             res.json(dbCharacter);
         })
     });
-
+//success
     app.post("/api/characters", function (req, res) {
+        console.log(req.body);
         db.Character.create({
             charName: req.body.charName,
-            userId: req.body.userId
+            UserId: req.body.UserId
         }).then(function (dbCharacter) {
             res.json(dbCharacter);
         })
     })
+    //Success
 
     app.put("/api/characters/:id", function (req, res) {
         db.Character.update(req.body,
             {
                 where: {
-                    id: req.body.id
+                    id: req.params.id
                 }
             }).then(function (dbCharacter) {
                 res.json(dbCharacter)
             })
     })
+    //success
 
     app.get("/api/characters/:id", function (req, res) {
         db.Character.findOne({
             where: {
-                id: req.body.id
+                id: req.params.id
             },
             include: [{
                 all: true
@@ -41,6 +44,7 @@ module.exports = function (app) {
         }).then(function (dbCharacter) {
             res.json(dbCharacter)
         })
+           //success
     })
 
 }
