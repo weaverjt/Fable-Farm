@@ -1,9 +1,9 @@
-INSERT INTO `sequelize_farble`.`users` (`imageURL`, `userName`) VALUES ('<none>', 'Billy');
-INSERT INTO `sequelize_farble`.`users` (`imageURL`, `userName`) VALUES ('<none>', 'Bob');
-INSERT INTO `sequelize_farble`.`users` (`imageURL`, `userName`) VALUES ('<none>', 'Ryan');
-INSERT INTO `sequelize_farble`.`users` (`imageURL`, `userName`) VALUES ('<none>', 'Cary');
-INSERT INTO `sequelize_farble`.`users` (`imageURL`, `userName`) VALUES ('<none>', 'Joe');
-INSERT INTO `sequelize_farble`.`users` (`imageURL`, `userName`) VALUES ('<none>', 'Eddie');
+INSERT INTO `sequelize_fable`.`users` (`imageURL`, `userName`) VALUES ('<none>', 'Billy');
+INSERT INTO `sequelize_fable`.`users` (`imageURL`, `userName`) VALUES ('<none>', 'Bob');
+INSERT INTO `sequelize_fable`.`users` (`imageURL`, `userName`) VALUES ('<none>', 'Ryan');
+INSERT INTO `sequelize_fable`.`users` (`imageURL`, `userName`) VALUES ('<none>', 'Cary');
+INSERT INTO `sequelize_fable`.`users` (`imageURL`, `userName`) VALUES ('<none>', 'Joe');
+INSERT INTO `sequelize_fable`.`users` (`imageURL`, `userName`) VALUES ('<none>', 'Eddie');
 
 USE sequelize_farble;
 INSERT INTO categories (catName) VALUES ("Fantasy");

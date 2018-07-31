@@ -1,33 +1,33 @@
 var db = require("../models");
 
-module.exports = function(app)  {
+module.exports = function (app) {
 
-    app.get("/api/characters", function(req, res) {
+    app.get("/api/characters", function (req, res) {
         db.Character.findAll({
-            include: [{all: true}]
+            include: [{ all: true }]
+        }).then(function (dbCharacter) {
+            res.json(dbCharacter);
         })
-    }).then(function(dbCharacter) {
-        res.json(dbCharacter);
     });
 
-    app.post("/api/characters", function(req, res) {
-        db.Character.create(req.body).then(function(dbCharacter) {
+    app.post("/api/characters", function (req, res) {
+        db.Character.create(req.body).then(function (dbCharacter) {
             res.json(dbCharacter);
         })
     })
 
-    app.put("/api/characters/:id", function(req, res) {
+    app.put("/api/characters/:id", function (req, res) {
         db.Character.update(req.body,
-        {
-            where: {
-                id: req.body.id
-            }
-        }).then(function(dbCharacter) {
-            res.json(dbCharacter)
-        })
+            {
+                where: {
+                    id: req.body.id
+                }
+            }).then(function (dbCharacter) {
+                res.json(dbCharacter)
+            })
     })
 
-    app.get("/api/characters/:id", function(req, res) {
+    app.get("/api/characters/:id", function (req, res) {
         db.Character.findOne({
             where: {
                 id: req.body.id
@@ -35,7 +35,7 @@ module.exports = function(app)  {
             include: [{
                 all: true
             }]
-        }).then(function(dbCharacter) {
+        }).then(function (dbCharacter) {
             res.json(dbCharacter)
         })
     })
