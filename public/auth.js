@@ -19,6 +19,13 @@ const errors = document.getElementById('errors')
 
 const logoutButton = document.getElementById('logout-button')
 
+const storyForm = document.getElementById('storyForm')
+const myStoryList = document.getElementById('myStoryList')
+
+const characterForm = document.getElementById('characterForm')
+const myCharacterList = document.getElementById('myCharacterList')
+
+
 // Log out
 logoutButton.addEventListener('click', () => {
     console.log("Log out was clicked")
@@ -40,6 +47,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
       uid = firebaseUser.uid
       localStorage.setItem("uid", uid) 
       console.log("logged in") /* redirect */
+
   
     } else {
   
@@ -50,7 +58,42 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
    /*    status.innerHTML = 'Status: <span class="status-red">not logged in</span>' */
     }
   })
-
+ 
+  
+  
+  // create new story
+  storyForm.addEventListener('submit', e => {
+      console.log('Story was added to your list!');
+      e.preventDefault()
+      
+    })
+  // create new character
+  characterForm.addEventListener('submit', e => {
+      console.log('Character was added to your list!');
+      e.preventDefault() 
+    })
+  
+  
+  
+  /* 
+  firebase.auth().onToggle(firebaseUser => {
+    if (toggle == true){
+  
+      //Everything in this if is for a logged in user
+      console.log("Stories")
+      storyForm.classList.remove('hide')
+      characterForm.classList.add('hide')
+      uid = firebaseUser.uid
+      localStorage.setItem("uid", uid)
+  
+    } else {
+  
+      //Everything in this "else" is when no one is logged in
+      console.log('characters')
+      storyForm.classList.add('hide')
+      characterForm.classList.remove('hide')
+    }
+  }) */
 
 var displayError = (message) => {
   console.log('this happened');
