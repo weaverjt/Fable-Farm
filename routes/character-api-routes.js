@@ -6,7 +6,7 @@ module.exports = function(app)  {
         db.Character.findAll({
             include: [{all: true}]
         })
-    }).then(function(dbCharacter) {
+    .then(function(dbCharacter) {
         res.json(dbCharacter);
     });
 
