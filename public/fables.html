@@ -13,7 +13,28 @@
 
 
 <body>
-   
+        <nav class="navbar navbar-left" role="navigation">
+                <div class="container-fluid">
+                    <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="index.html">Home
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="fables.html">Fables</a>
+                        </li>
+                        <li>
+                            <a href="profile.html">Profile</a>
+                        </li>
+                        <li>
+                            <a id="logout-button">Log out</a> 
+                        </li>
+                        
+                    </ul>
+                </div>
+            </nav>
+        
 <!-- 
 
 toggle tab thing that shows/hides story/character form
@@ -42,7 +63,7 @@ Character index ( sort by A-Z, most popular, recent, genre)
 
     <!-- Firebase and app -->
     <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
-    <script src="app.js" charset="utf-8"></script>
+    <script src="auth.js" charset="utf-8"></script>
 </body>
 
 </html>
