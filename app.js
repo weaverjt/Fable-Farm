@@ -15,27 +15,27 @@ const database = firebase.database()
 const auth = firebase.auth()
 
 // Access the values from the html sign up and log in form
-const loginForm = document.getElementById('login-form')
+const loginForm = document.getElementById('login')
 const loginEmail = document.getElementById('login-email')
 const loginPassword = document.getElementById('login-password')
-const loginButton = document.getElementById('login-button')
+/* const loginButton = document.getElementById('login-button') */
 
-const signUpForm = document.getElementById('sign-up-form')
+const signUpForm = document.getElementById('sign-up')
 const signUpEmail = document.getElementById('sign-up-email')
 const signUpPassword= document.getElementById('sign-up-password')
-const signUpButton = document.getElementById('sign-up-button')
+/* const signUpButton = document.getElementById('sign-up-button') */
 
 const logoutButton = document.getElementById('logout-button')
 
 const status = document.getElementById('status')
 const errors = document.getElementById('errors')
 
-const addItemForm = document.getElementById('add-item-form')
+const accountForm = document.getElementById('accountForm')
 const toDoList = document.getElementById('to-do-list')
 
 // Log in
-loginForm.addEventListener('submit', e => {
-  console.log('log in was clickd');
+loginForm.addEventListener('click', e => {
+  console.log('log in was clicked');
   e.preventDefault()
   const email = loginEmail.value
   const pass = loginPassword.value
@@ -44,7 +44,7 @@ loginForm.addEventListener('submit', e => {
 })
 
 // Sign up
-signUpForm.addEventListener('submit', e => {
+signUpForm.addEventListener('click', e => {
   console.log('sign up was clicked');
   e.preventDefault()
   const email = signUpEmail.value
@@ -55,6 +55,7 @@ signUpForm.addEventListener('submit', e => {
 
 // Log out
 logoutButton.addEventListener('click', () => {
+  console.log("Log out was clicked")
   auth.signOut()
 })
 
@@ -67,15 +68,17 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
 
     //Everything in this if is for a logged in user
     console.log(firebaseUser)
-    toDoList.classList.remove('hide')
+    accountForm.classList.add('hide')
     loginForm.classList.add('hide')
     signUpForm.classList.add('hide')
     logoutButton.classList.remove('hide')
-    status.innerHTML = 'Status: <span class="status-green">logged in</span>'
+   /*  status.innerHTML = 'Status: <span class="status-green">logged in</span>' */
     uid = firebaseUser.uid
+    localStorage.setItem("uid", uid) 
+   
 
     // Use the UID to get authorized data
-    database.ref('/to-do-list').orderByChild('uid').equalTo(uid).on("value", (snapshot) => {
+ /*    database.ref('/to-do-list').orderByChild('uid').equalTo(uid).on("value", (snapshot) => {
       document.getElementById('to-do-list-items').innerHTML = ""
       snapshot.forEach(data => {
         var p = document.createElement('p')
@@ -87,28 +90,28 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
         p.appendChild(deleteButton)
         document.getElementById('to-do-list-items').appendChild(p)
       })
-    })
+    }) */
 
   } else {
 
     //Everything in this "else" is when no one is logged in
     console.log('not logged in')
-    toDoList.classList.add('hide')
+    accountForm.classList.remove('hide')
     loginForm.classList.remove('hide')
     signUpForm.classList.remove('hide')
     logoutButton.classList.add('hide')
-    status.innerHTML = 'Status: <span class="status-red">not logged in</span>'
+ /*    status.innerHTML = 'Status: <span class="status-red">not logged in</span>' */
   }
 })
-
+/* 
 // delete event
 document.body.addEventListener("click", function(event) {
   if (event.target.matches(".delete-button")) {
     key = event.target.getAttribute("data")
     database.ref('/to-do-list').child(key).remove()
   }
-})
-
+}) */
+/* 
 // add event
 addItemForm.addEventListener('submit', (e) => {
   e.preventDefault()
@@ -118,13 +121,12 @@ addItemForm.addEventListener('submit', (e) => {
     uid: uid
   })
   addItemForm.reset()
-})
+}) */
 
-// error
 var displayError = (message) => {
   console.log('this happened');
-  errors.text(message)
+  errors.innerHTML = message
   setTimeout(() => {
-    errors.empty()
+    errors.innerHTML = ""
   }, 2000)
 }

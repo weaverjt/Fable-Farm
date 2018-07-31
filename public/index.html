@@ -9,64 +9,96 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+
 </head>
 
-
 <body>
+
     <nav class="navbar navbar-left" role="navigation">
         <div class="container-fluid">
             <ul class="nav navbar-nav">
-                    <li class="active">
-                            <a href="index.html">Home
-                                <span class="sr-only">(current)</span>
-                            </a>
-                        </li>
                 <li class="active">
-                    <a href="#">Stories
+                    <a href="index.html">Home
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">Characters</a>
+                    <a href="fables.html">Fables</a>
                 </li>
-                <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Profile <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="#">View Profile</a></li>
-                          <li><a href="#">Login</a></li>
-                          <li><a href="#">Sign out</a></li>
-                          </ul>
-                          </li>
+                <li>
+                    <a href="profile.html">Profile</a>
+                </li>
+                <li>
+                    <a id="logout-button">Log out</a> 
+                </li>
+                
             </ul>
         </div>
     </nav>
 
 
+<!-- add show/hide functionality so that the login goes away if a  user is signed in -->
+    <body>
+        <div class="container" style="margin-top: 100px">
+            <form>
+                <div class="row" id="accountForm">
+                    <h2 style="text-align:center">Login or sign up</h2>
+                    <div class="vl">
+                        <span class="vl-innertext">or</span>
+                    </div>                   
 
-    
+                    <div class="col">
+                        <div class="hide-md-lg">
+                            <p>Sign in</p>
+                        </div>
+
+                        <input type="text" name="username" id="login-email" placeholder="Username">
+                        <input type="password" name="password" id="login-password" placeholder="Password">
+                        <input type="submit" id="login" value="Login">
+
+                        <div class="col">
+                                <a href="#" style="color:blue" class="btn">Forgot password?</a>
+                            </div>
+                    </div>
+
+                    <div class="col" id="sign-up">
+                            <input type="text" name="username" id="sign-up-email" placeholder="Username">
+                            <input type="password" name="password" id="sign-up-password" placeholder="Password">
+                            <input type="submit" value="Create Account">
+                          </div>
+
+                </div>
+            </form>
+
+            
+            <div class="row">
+                    <div class="col-md-6">
+                        list of top ten most popular stories 
+                    </div>
+                </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h3>some about shit</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <p>some example maybe??</p>
+            </div>
+        </div>
+
+        </div>
+
+        
+
+        
 
 
-    <!-- Errors -->
-    <p id="errors"></p>
-
-    <!-- Status -->
-    <p id="status"></p>
-
-    <!-- todolist that shows how authentication works -->
-
-    <!--     <form id="add-item-form">
-            <h3>To do list</h3>
-            <input type="text" id="item" placeholder="to do item" required>
-            <button type="submit">Add item</button>
-        </form>
-
-        <div id="to-do-list-items"></div>
- -->
 
 
-    <!-- Firebase and app -->
-    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
-    <script src="app.js" charset="utf-8"></script>
-</body>
+        <!-- Firebase and app -->
+        <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+       <script src="../app.js" charset="utf-8"></script>
+    </body>
 
 </html>
