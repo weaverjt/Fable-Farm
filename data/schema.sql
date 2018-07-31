@@ -1,9 +1,9 @@
 -- Drops the todolist if it exists currently --
-DROP DATABASE IF EXISTS farble_db;
+DROP DATABASE IF EXISTS fable_db;
 -- Creates the "todolist" database --
-CREATE DATABASE farble_db;
+CREATE DATABASE fable_db;
 
-USE farble_db;
+USE fable_db;
 
 CREATE TABLE users (
 		userId INT AUTO_INCREMENT NOT NULL,
