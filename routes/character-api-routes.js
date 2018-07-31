@@ -11,7 +11,10 @@ module.exports = function (app) {
     });
 
     app.post("/api/characters", function (req, res) {
-        db.Character.create(req.body).then(function (dbCharacter) {
+        db.Character.create({
+            charName: req.body.charName,
+            userId: req.body.userId
+        }).then(function (dbCharacter) {
             res.json(dbCharacter);
         })
     })
