@@ -5,7 +5,7 @@ INSERT INTO `sequelize_fable`.`users` (`imageURL`, `userName`) VALUES ('<none>',
 INSERT INTO `sequelize_fable`.`users` (`imageURL`, `userName`) VALUES ('<none>', 'Joe');
 INSERT INTO `sequelize_fable`.`users` (`imageURL`, `userName`) VALUES ('<none>', 'Eddie');
 
-USE sequelize_farble;
+USE sequelize_fable;
 INSERT INTO categories (catName) VALUES ("Fantasy");
 INSERT INTO categories  (catName) VALUES ("Sci-fi");
 INSERT INTO categories (catName) VALUES ("Horror");
@@ -16,7 +16,7 @@ INSERT INTO categories  (catName) VALUES ("Mystery/Triller");
 INSERT INTO categories (catName) VALUES ("Comedy");
 
 
-USE sequelize_farble;
+USE sequelize_fable;
 
 INSERT INTO characters (charName,stories,userId) VALUES ("Hulk", "this is the story about Hulk",2);
 INSERT INTO characters (charName,stories,userId) VALUES ("SpongeBob", "this is the story about SpongeBob",3);
