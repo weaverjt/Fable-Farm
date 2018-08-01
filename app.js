@@ -30,6 +30,7 @@ const signUpPassword= document.getElementById('sign-up-password')
 /* const signUpButton = document.getElementById('sign-up-button') */
 
 const logoutButton = document.getElementById('logout-button')
+const loginButton = document.getElementById('login-button')
 
 const status = document.getElementById('status')
 const errors = document.getElementById('errors')
@@ -63,6 +64,11 @@ logoutButton.addEventListener('click', () => {
   auth.signOut()
 })
 
+loginButton.addEventListener('click', () => {
+  console.log("logged in")
+  auth.signIn()
+})
+
 // UID is global so it can be accessed anywhere
 var uid = ""
 
@@ -72,12 +78,11 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
 
     //Everything in this if is for a logged in user
     console.log(firebaseUser)
-    accountForm.classList.add('hide')
-    loginForm.classList.add('hide')
-    signUpForm.classList.add('hide')
-    logoutButton.classList.remove('hide')
-    authForm.classList.add('hide')
    /*  status.innerHTML = 'Status: <span class="status-green">logged in</span>' */
+
+   /* get this out to use for shit later */
+   loginButton.classList.add('hide')
+   logoutButton.classList.remove('hide')
     uid = firebaseUser.uid
     localStorage.setItem("uid", uid) 
 
@@ -85,10 +90,8 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
 
     //Everything in this "else" is when no one is logged in
     console.log('not logged in')
-    accountForm.classList.remove('hide')
-    loginForm.classList.remove('hide')
-    signUpForm.classList.remove('hide')
     logoutButton.classList.add('hide')
+    loginButton.classList.remove('hide')
  /*    status.innerHTML = 'Status: <span class="status-red">not logged in</span>' */
   }
 })

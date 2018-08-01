@@ -35,6 +35,9 @@
                             <a href="devPage.html">About Dev.</a>
                         </li>
                         <li>
+                            <a id="login-button" href="login.html">Login/Sign-up</a>
+                        </li>
+                        <li>
                             <a id="logout-button">Log out</a>
                         </li>
                 </ul>
@@ -60,26 +63,27 @@
     <div class="row" id="createNewForms">
         <div class="col-md-6">
             
-           rounded switch will toggle between new story form and new character form by adding js that will
+          <!--  rounded switch will toggle between new story form and new character form by adding js that will
             listen to the element and show/hide the character/story forms based on its position 
-
-        <label class="switch">
-        <input type="checkbox">
-        <span class="slider round"></span>
+ -->
+        <label class="Switch" for="Switch">
+            Create New...
         </label> 
+            <select name="Switch" id="Switch" data-role="slider">
+                    <option value="story">Story</option>
+                    <option value="character">Character</option>
+                </select> 
 
         <form>
         <div class="row" id="storyForm">
-                <h3>New story!</h3>
                 <input type="text" id="item" placeholder="Title" required>
                 <input type="text" id="item" placeholder="Setting" required>
                 <input type="text" id="item" placeholder="Genre" required>
                 <input type="text" id="item" placeholder="Opening Page" required>
-                <button type="submit">Add item</button>
+                <button type="submit">Create Story!</button>
             </div>
             
             <div class="row" id="characterForm">
-                <h3>New Character!</h3>
                 <div id="col-md-6">
                 <input type="text" id="item" placeholder="to do item" required>
             </div>
@@ -90,7 +94,7 @@
                 </div>
         
               </div>
-              <button type="submit">Add item</button>
+              <button type="submit">Create Character!</button>
             
             </form>
         </div>
