@@ -18,12 +18,39 @@ const status = document.getElementById('status')
 const errors = document.getElementById('errors')
 
 const logoutButton = document.getElementById('logout-button')
+const loginButton = document.getElementById('login-button')
 
-const storyForm = document.getElementById('storyForm')
+/* this is for the profile page */
 const myStoryList = document.getElementById('myStoryList')
-
-const characterForm = document.getElementById('characterForm')
 const myCharacterList = document.getElementById('myCharacterList')
+
+/* This is for the Create page */
+const storyForm = document.getElementById('storyForm')
+const characterForm = document.getElementById('characterForm')
+
+/* const Switch = document.getElementById('Switch')
+
+//Code to show/hide the create forms using the toggle switch 
+
+ Switch.addEventListener('tap', () => {
+  if (Switch.option.value == "story") {
+    console.log("story")
+    storyForm.classList.remove('hide')
+    characterForm.classList.add('hide')
+  } else {
+     console.log("character")
+    storyForm.classList.add('hide')
+    characterForm.classList.remove('hide')
+  }
+
+})  */
+
+
+//login
+loginButton.addEventListener('click', () => {
+  console.log("logged in")
+  auth.signIn()
+})
 
 
 // Log out
@@ -36,31 +63,31 @@ logoutButton.addEventListener('click', () => {
 // UID is global so it can be accessed anywhere
 var uid = ""
 
-// Firebase monitors the Auth state in real time. Use this if/else statement to do things based on that state.
 firebase.auth().onAuthStateChanged(firebaseUser => {
-    if (firebaseUser){
-  
-      //Everything in this if is for a logged in user
-      console.log(firebaseUser)
-      logoutButton.classList.remove('hide')
-     /*  status.innerHTML = 'Status: <span class="status-green">logged in</span>' */
-      uid = firebaseUser.uid
-      localStorage.setItem("uid", uid) 
-      console.log("logged in") /* redirect */
+  if (firebaseUser){
 
-  
-    } else {
-  
-      //Everything in this "else" is when no one is logged in
-      console.log('not logged in')
-      logoutButton.classList.add('hide')
-      /* location.setItem('index.html') ----------------------this isn't working */
-   /*    status.innerHTML = 'Status: <span class="status-red">not logged in</span>' */
-    }
-  })
+    //Everything in this if is for a logged in user
+    console.log(firebaseUser)
+   /*  status.innerHTML = 'Status: <span class="status-green">logged in</span>' */
+
+   /* get this out to use for shit later */
+   loginButton.classList.add('hide')
+   logoutButton.classList.remove('hide')
+    uid = firebaseUser.uid
+    localStorage.setItem("uid", uid) 
+
+  } else {
+
+    //Everything in this "else" is when no one is logged in
+    console.log('not logged in')
+    logoutButton.classList.add('hide')
+    loginButton.classList.remove('hide')
+ /*    status.innerHTML = 'Status: <span class="status-red">not logged in</span>' */
+  }
+})
  
-  
-  
+
+/*   
   // create new story
   storyForm.addEventListener('submit', e => {
       console.log('Story was added to your list!');
@@ -73,7 +100,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
       e.preventDefault() 
     })
   
-  
+   */
   
   /* 
   firebase.auth().onToggle(firebaseUser => {
