@@ -1,4 +1,4 @@
-
+var UID = FirebaseID_ToBe
 
 $(document).ready(function(){
     console.log("hello world");
@@ -206,4 +206,23 @@ $(document).on("click","#submitFrag",function(){
         });
 })
 
-      
+$(document).on("click", "#subStory", function(event) {
+    event.preventDefault();
+    var newStory = {
+        UserId: UID,
+        title: $("#title").val().trim(),
+        setting: $("#setting").val().trim(),
+        categoryID: $("#genre").val().trim(),
+        storyText: $("#opening").val().trim()
+    };
+
+
+    $.ajax({
+        method: "POST",
+        url: "/api/story",
+        data : newStory
+      })
+        .then(function() {
+         console.log(" Post added");
+        });
+})
