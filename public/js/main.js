@@ -136,7 +136,7 @@ $(document).on("click",".storiesButtons",function() {
 
         for (var f in data.Fragments)
         {
-            htmlText+=`<p> fragment ${f} : ${data.Fragments[f].fragmentText} <button id=${data.Fragments[f].id} class="fragButtons" val=${data.Fragments[f].id}> delete? </button></p>`
+            htmlText+=`<p> <button id="choose" class="chooseButton" value="${data.Fragments[f].id}"> select me</button> fragment ${f} : ${data.Fragments[f].fragmentText} <button id="frag${data.Fragments[f].id}" class="fragButtons" value="${data.Fragments[f].id}"> delete? </button></p>`
         }
         console.log(htmlText);
         $("#adminContainer").append(htmlText);
@@ -144,3 +144,66 @@ $(document).on("click",".storiesButtons",function() {
     })
 
 })
+
+$(document).on("click",".chooseButton",function() {
+    console.log("enter choose");
+    var chooseId=($(this).val());
+    console.log(chooseId);
+
+    console.log(`frag${chooseId}`);
+
+    $(`#frag${chooseId}`).attr("disabled","disabled");
+
+    var data = {"status":"true"}
+    // update fragments status to "true"
+    $.ajax({
+        method: "PUT",
+        url: "/api/fragment/"+chooseId,
+        data: data
+      })
+        .then(function() {
+         console.log("updated");
+        });
+})
+
+$(document).on("click",".fragButtons",function() {
+    console.log("enter fragggg");
+    var fragId=($(this).val());
+    console.log(fragId);
+
+    $.ajax({
+        method: "DELETE",
+        url: "/api/fragment/"+fragId,
+        
+      })
+        .then(function() {
+         console.log(" fragment deleted");
+        });
+})
+
+
+
+$(document).on("click","#submitFrag",function(){
+
+    console.log("submit yeaaahhh");
+    var data={
+        UserId: $("#userId").val().trim(),
+        StoryId: $("#storyId").val().trim(),
+        fragmentText:$("#fragText").val().trim(),
+        status: $("#status option:selected").val(),
+
+    };
+
+    console.log(data);
+
+    $.ajax({
+        method: "POST",
+        url: "/api/fragment/",
+        data : data
+      })
+        .then(function() {
+         console.log(" Post added");
+        });
+})
+
+      
