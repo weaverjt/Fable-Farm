@@ -7,28 +7,6 @@ module.exports = function(sequelize, DataTypes) {
 
     });
 
-    // // association with USER
-    // Story.associate = function(models) {
-    // // We're saying that a Fragment should belong to a user
-    // // A story can't be created without an user due to the foreign key constraint
-    // Story.belongsTo(models.User, {
-    //     foreignKey: {
-    //     allowNull: false
-    //     }
-    //     });
-    // };
-
-    //     // association with STORIES
-    // Story.associate = function(models) {
-    // // We're saying that a Fragment should belong to a category
-    // // A story can't be created without an category due to the foreign key constraint
-    // Story.belongsTo(models.Category, {
-    //     foreignKey: {
-    //     allowNull: false
-    //     }
-    //     });
-    // };
-
 
     Story.associate = function(models) {
         
@@ -42,6 +20,10 @@ module.exports = function(sequelize, DataTypes) {
             foreignKey: {
             allowNull: false
             }
+            });
+        
+        Story.hasMany(models.Fragment,{
+            onDelete:"cascade"
             });
         };
 
