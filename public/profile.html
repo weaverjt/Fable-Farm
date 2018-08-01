@@ -15,119 +15,95 @@
 <body>
     <!-- navbar -->
     <nav class="sidenav" role="navigation">
-            <div class="container-fluid">
-                <ul class="nav navbar-nav">
-                    <li class="active">
-                        <a href="index.html">Home
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-                    <li>
-                            <a href="profile.html">Profile</a>
-                        </li>
-                    <li>
-                        <a href="fables.html">Fables</a>
-                    </li>
-                    <li>
-                            <a href="createFable.html">Create New Fable</a>
-                        </li>
-                        <li>
-                            <a href="devPage.html">About Dev.</a>
-                        </li>
-                        <li>
-                            <a id="login-button" href="login.html">Login/Sign-up</a>
-                        </li>
-                        <li>
-                            <a id="logout-button">Log out</a>
-                        </li>
-                </ul>
+        <div class="container-fluid">
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a href="index.html">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="profile.html">Profile</a>
+                </li>
+                <li>
+                    <a href="fables.html">Fables</a>
+                </li>
+                <li>
+                    <a href="createFable.html">Create New Fable</a>
+                </li>
+                <li>
+                    <a href="devPage.html">About Dev.</a>
+                </li>
+                <li>
+                    <a id="login-button" href="login.html">Login/Sign-up</a>
+                </li>
+                <li>
+                    <a id="logout-button">Log out</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- jumbo (profile) -->
+    <!-- make the jumbo stick to the top but go away if you scroll down... -->
+    <div class="main">
+
+        <div class="jumbotron" id="farmJumbo">
+            <div class="row ">
+                <div class="col-md-4">
+                    <div class="card" style="width:400px">
+                        <img class="card-img-top" src="img_avatar1.png" alt="Card image">
+                        <div class="card-body">
+                            <div class="col-md-8 px-3">
+                                <div class="card-block px-3">
+                                    <h4 class="card-title" id="userName"></h4>
+                                    <p class="card-text" id="UserBio"></p>
+                                    <a href="profile.html" class="btn btn-primary">See Profile</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </nav>
-<!-- jumbo (profile) -->
-<!-- make the jumbo stick to the top but go away if you scroll down... -->
-    <div class="jumbotron">
-        <h1><!-- profile img/background --></h1>
-        <p>
-<!--
-Name
-Age
-Location
-Bio/description
-_______
--->
-        </p>
-        <!-- well need some buttons to give the user the option of editing their profile... -->
-        <p>
-<!--  
-Activity : (stories that you are either running or that you are contributing to)
-Bookmarked??
- -->
-        </p>
-    </div>
 
-
-<!-- ____________________________ -->
-
-
-    
-    <div class="container" id="myStuff">
-    <!-- My stories -->
-        <div class="row">
-            <div class="col-md-6">
-                <div id="myStoryList"></div>
+            <div class="row ">
+                <div class="col-md-4">
+                    <div class="card" style="width:400px">
+                        <img class="card-img-top" src="img_avatar1.png" alt="Card image">
+                        <div class="card-body">
+                            <div class="col-md-8 px-3">
+                                <div class="card-block px-3">
+                                    <h4 class="card-title" id="userName"></h4>
+                                    <p class="card-text" id="UserBio"></p>
+                                    <a href="profile.html" class="btn btn-primary">See Profile</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-   
-    <!-- My characters -->
-    <div class="row">
-        <div class="col-md-6">
-    
-            <div id="myCharacterList"></div>
+        <!-- ____________________________ -->
+
+        <div class="container" id="myStuff">
+            <!-- My stories -->
+            <div class="row">
+                <div class="col-md-6">
+                    <div id="myStoryList"></div>
+                </div>
+            </div>
+
+            <!-- My characters -->
+            <div class="row">
+                <div class="col-md-6">
+
+                    <div id="myCharacterList"></div>
+                </div>
+            </div>
+
+
         </div>
+
     </div>
-
-    <!-- Create New -->
-<!--     <div class="row" id="createNewForms">
-        <div class="col-md-6">
-            
-           rounded switch will toggle between new story form and new character form by adding js that will
-            listen to the element and show/hide the character/story forms based on its position 
-
-        <label class="switch">
-        <input type="checkbox">
-        <span class="slider round"></span>
-        </label> 
-
-        <form>
-        <div class="row" id="storyForm">
-                <h3>New story!</h3>
-                <input type="text" id="item" placeholder="Title" required>
-                <input type="text" id="item" placeholder="Setting" required>
-                <input type="text" id="item" placeholder="Genre" required>
-                <input type="text" id="item" placeholder="Opening Page" required>
-                <button type="submit">Add item</button>
-            </div>
-            
-            <div class="row" id="characterForm">
-                <h3>New Character!</h3>
-                <div id="col-md-6">
-                <input type="text" id="item" placeholder="to do item" required>
-            </div>
-            <div id="gender">
-                <input type="radio" name="gender" value="male" checked> Male<br>
-                <input type="radio" name="gender" value="female"> Female<br>
-                <input type="radio" name="gender" value="other"> Other
-            </div>
-        
-              </div>
-              <button type="submit">Add item</button>
-            
-            </form>
-        </div>
-    </div> -->
-    </div>
-
-
     <!-- Errors -->
     <p id="errors"></p>
 
