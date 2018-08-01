@@ -64,11 +64,6 @@ logoutButton.addEventListener('click', () => {
   auth.signOut()
 })
 
-loginButton.addEventListener('click', () => {
-  console.log("logged in")
-  auth.signIn()
-})
-
 // UID is global so it can be accessed anywhere
 var uid = ""
 

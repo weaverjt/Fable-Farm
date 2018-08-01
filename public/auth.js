@@ -46,20 +46,12 @@ const characterForm = document.getElementById('characterForm')
 })  */
 
 
-//login
-loginButton.addEventListener('click', () => {
-  console.log("logged in")
-  auth.signIn()
-})
-
-
 // Log out
 logoutButton.addEventListener('click', () => {
     console.log("Log out was clicked")
     auth.signOut()
   })
-
-
+  
 // UID is global so it can be accessed anywhere
 var uid = ""
 
