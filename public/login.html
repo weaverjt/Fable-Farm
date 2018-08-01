@@ -57,7 +57,7 @@
                 <p>Sign in</p>
             </div>
 
-            <input type="text" name="username" id="login-email" placeholder="Username">
+            <input type="text" name="username" id="login-email" placeholder="Login Email">
             <input type="password" name="password" id="login-password" placeholder="Password">
             <input type="submit" id="login" value="Login">
 
@@ -67,9 +67,10 @@
         </div>
 
         <div class="col" id="sign-up">
-            <input type="text" name="username" id="sign-up-email" placeholder="Username">
+            <input type="text" name="username" id="sign-up-email" placeholder="Login Email">
             <input type="password" name="password" id="sign-up-password" placeholder="Password">
-            <input type="submit" value="Create Account">
+            <input type="text" name="screenName" id="screenName" placeholder="Pen Name">
+            <input type="submit" id="newUserBtn" value="Create Account">
         </div>
 
     </div>
@@ -80,7 +81,7 @@
 
         <!-- Firebase and app -->
         <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
-        <script src="../app.js" charset="utf-8"></script>
+        <script src="/js/app.js" charset="utf-8"></script>
     </body>
 
 </html>
