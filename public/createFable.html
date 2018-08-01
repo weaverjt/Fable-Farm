@@ -75,12 +75,21 @@
 
         <form>
         <div class="row" id="storyForm">
-                <input type="text" id="item" placeholder="Title" required>
-                <input type="text" id="item" placeholder="Setting" required>
-                <input type="text" id="item" placeholder="Genre" required>
-                <input type="text" id="item" placeholder="Opening Page" required>
+                <label for="title">What would you like to call you story?</label>
+                <input type="text" class="title" id="item" placeholder="Title" required>
+                
+                <label for="setting">Where does your story take place? Is this a fantasy world? Alternate dimension? Timeline?</label>
+                <input type="text" class="setting" id="item" placeholder="Setting" required>
+                
+                <label for="genre">Is the fantasy? historical fiction? Mystery? Romance? Sci-fi?</label>
+                <input type="text" class="genre" id="item" placeholder="Genre" required>
+                
+                <label for="opening">Begin your story! Write out a brief two or three paragraph  page to give other users a starting point<br>
+                so that they can add on to your story and write with you!</label>
+                <input type="text-area" class="opening" id="item" placeholder="Opening Page" required>
+                
                 <button type="submit">Create Story!</button>
-            </div>
+        </div>
             
          <!--    <div class="row" id="characterForm">
                 <div id="col-md-6">
@@ -95,7 +104,7 @@
               </div>
               <button type="submit">Create Character!</button>
             -->
-            
+
             </form>
         </div>
     </div>
@@ -112,7 +121,7 @@
 
     <!-- Firebase and app -->
     <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
-    <script src="auth.js" charset="utf-8"></script>
+    <script src="/js/auth.js" charset="utf-8"></script>
 </body>
 
 </html>
