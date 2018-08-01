@@ -17,22 +17,35 @@ module.exports = function (app) {
         res.json(dbFragment);
     })
 
-    app.post("/api/fragment", function(req, res) {
+    app.post("/api/fragment", function(req, res) {  //success
         db.Fragment.create(req.body).then(function(dbFragment) {
             res.json(dbFragment)
         })
     })
 
-    app.delete("/api/fragment/:id", function(req, res) {
+    app.delete("/api/fragment/:id", function(req, res) {   //success
         db.Fragment.destroy({
             where: {
-                fragmentId: req.params.id
+                id: req.params.id
             }
         }).then(function(dbFragment) {
             res.json(dbFragment)
         })
     })
 
+    app.put("/api/fragment/:id", function (req, res) {  //success
+        db.Fragment.update(req.body,
+            {
+                where: {
+                    id: req.params.id
+                }
+            }).then(function (dbFragment) {
+                res.json(dbFragment)
+            })
+
+            console.log(req.body);
+    })
+  
     
 
 
