@@ -1,4 +1,4 @@
-
+var firebaseId = require("./app");
 
 $(document).ready(function(){
     console.log("hello world");
