@@ -14,10 +14,14 @@ module.exports = function(app) {
         res.sendFile(path.join(__dirname, "../public/profile.html"))
     })
 
-    app.get("/createStory", function(req, res) {
-        res.sendFile(path.join(__dirname, "../public/test-api.html"))
+    app.get("/developers", function(req, res) {
+        res.sendFile(path.join(__dirname, "../public/devPage.html"))
     })
 
-    
+    app.get("/create", function(req, res) {
+        res.sendFile(path.join(__dirname + "../public/createFable.html"))
+    })
+
+
 
 }
