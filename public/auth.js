@@ -18,14 +18,40 @@ const status = document.getElementById('status')
 const errors = document.getElementById('errors')
 
 const logoutButton = document.getElementById('logout-button')
+const loginButton = document.getElementById('login-button')
+
+/* this is for the profile page */
+const myStoryList = document.getElementById('myStoryList')
+const myCharacterList = document.getElementById('myCharacterList')
+
+/* This is for the Create page */
+const storyForm = document.getElementById('storyForm')
+const characterForm = document.getElementById('characterForm')
+
+/* const Switch = document.getElementById('Switch')
+
+//Code to show/hide the create forms using the toggle switch 
+
+ Switch.addEventListener('tap', () => {
+  if (Switch.option.value == "story") {
+    console.log("story")
+    storyForm.classList.remove('hide')
+    characterForm.classList.add('hide')
+  } else {
+     console.log("character")
+    storyForm.classList.add('hide')
+    characterForm.classList.remove('hide')
+  }
+
+})  */
+
 
 // Log out
 logoutButton.addEventListener('click', () => {
     console.log("Log out was clicked")
     auth.signOut()
   })
-
-
+  
 // UID is global so it can be accessed anywhere
 var uid = ""
 

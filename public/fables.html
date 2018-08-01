@@ -2,111 +2,108 @@
 <html>
 
 <head>
-    <title>Fable Farm | Home</title>
+    <title>Fable Farm | Fables</title>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" media="screen" href="./css/style.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="js/main.js"></script>
 </head>
 
 
 <body>
-        <nav class="sidenav" role="navigation">
-                <div class="container-fluid">
-                    <ul class="nav navbar-nav">
-                        <li class="active">
-                            <a href="index.html">Home
-                                <span class="sr-only">(current)</span>
-                            </a>
-                        </li>
-                        <li>
-                                <a href="profile.html">Profile</a>
-                            </li>
-                        <li>
-                            <a href="fables.html">Fables</a>
-                        </li>
-                        <li>
-                                <a href="createFable.html">Create New Fable</a>
-                            </li>
-                            <li>
-                                <a href="devPage.html">About Dev.</a>
-                            </li>
-                            <li>
-                                <a id="logout-button">Log out</a>
-                            </li>
-                    </ul>
-                </div>
-            </nav>
-            <div class="main">
-                    <div class="jumbotron">
+    <nav class="sidenav" role="navigation">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a href="index.html">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="profile.html">Profile</a>
+                </li>
+                <li>
+                    <a href="fables.html">Fables</a>
+                </li>
+                <li>
+                    <a href="createFable.html">Create New Fable</a>
+                </li>
+                <li>
+                    <a href="devPage.html">About Dev.</a>
+                </li>
+                <li>
+                    <a id="login-button" href="login.html">Login/Sign-up</a>
+                </li>
+                <li>
+                    <a id="logout-button">Log out</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-                            <div id="jumboAbout">
-                                <h1>Fable Farm!</h1>
-                            </div>
-                            <div id="jumboUser">
-                                <h1>User card</h1>
-                                <p>
-                                    <!--
-                                Name
-                                Age
-                                Location
-                                Bio/description
-                                _______
-                                -->
-                    
-                                </p>
-                            </div>
-                    
-                        </div>
-<!-- 
-
-toggle tab thing that shows/hides story/character form
-
-Popular (current) stories
-Community favorites slide (old??)
-Latest?
-Create New Story (sends user to create page, redundant link in Profile page)
-
-Catagories- romance, mystery, horror, fantasy, scifi, etc..
-
-Search by form
+    <!-- 
+Popular/recent/community favorites +5 (add in later?)
+>(Edison got this working)Catagories- romance, mystery, horror, fantasy, scifi, etc..
+__________________
+Stretch goals
+<<  -Search for specific story form
+    -Story/Character index(list of all) ( sort by A-Z, most popular, recent, genre)
+>>
 _______________________
-
-Community Top ten
-Create New Character (will send user to the create page, redundant link included in profile page)
-
-Character index ( sort by A-Z, most popular, recent, genre)
+Create New>>>link
 -->
-
-    <div class="container">
-        <div class="row" id="storyList">
-            <div class="col-md-6">
-                <!-- insert story table data here -->
-                We have some stories here! they are cool!
+    <div class="main">
+        <div class="jumbotron">
+            <div id="jumboAbout">
+                <h1>Fable Farm!</h1>
             </div>
         </div>
-        <div class="row" id="characterList">
+
+        <div class="container">
+            <div class="row">
                 <div class="col-md-6">
-                <!-- insert character table data here -->
-                we have some characters here, they are also cool
+                    <div class="dropdown_users">
+                    </div>
+                    <button id="checkUser">What links user </button>                    
                 </div>
             </div>
-            <div class="row" id="createLink">
-                    <div class="col-md-6">
-                    <a href="createFable.html">Create New</a>
-                    </div>
+
+            <div class="row" id="storyList">
+                <div class="col-md-6">
+                    <!-- insert story table data here -->
+                    <h2>Fables</h2>
+                    <div class="dropdown_cat"></div>
+                    <button id="sortCat">Sort by Categories </button>
+                     <!-- <div id="adminContainer"></div> -->
+                    <div id="storiesContainer"></div>
+                    <div id="storyContainer"></div>
+                    <h2>List of fragments available for this stories : </h2>
+                    <div id="fragContainer"></div>
                 </div>
+            </div>
+
+            <div class="row" id="characterList">
+                <div class="col-md-6">
+                    <!-- insert character table data here -->
+                    <div id="charContainer"></div>
+                </div>
+            </div>
+
+            <div class="row" id="createLink">
+                <div class="col-md-6">
+                    <a href="createFable.html">Create New</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
 
     </div>
 
-
-</div>
-<script>
-    //We need to collect the items by id ex $("#title") to export and the DOM side API routes here
-    //We need the authentication to populate the user id which then can be used to populate this using handlebars
-</script>
 
     <!-- Firebase and app -->
     <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
