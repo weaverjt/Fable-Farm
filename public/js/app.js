@@ -10,8 +10,10 @@ var config = {
 // Initialize Firebase
 firebase.initializeApp(config);
 
+var creatingNewUser = false;
+
 // Make a connection to the Firebase realtime database
-const database = firebase.database()
+// const database = firebase.database()
 const auth = firebase.auth()
 
 
@@ -27,9 +29,11 @@ const loginPassword = document.getElementById('login-password')
 const signUpForm = document.getElementById('sign-up')
 const signUpEmail = document.getElementById('sign-up-email')
 const signUpPassword= document.getElementById('sign-up-password')
+const signUpScreenName = document.getElementById('screenName');
 /* const signUpButton = document.getElementById('sign-up-button') */
 
 const logoutButton = document.getElementById('logout-button')
+
 
 const status = document.getElementById('status')
 const errors = document.getElementById('errors')
@@ -43,18 +47,25 @@ loginForm.addEventListener('click', e => {
   e.preventDefault()
   const email = loginEmail.value
   const pass = loginPassword.value
-  const promise = auth.signInWithEmailAndPassword(email, pass)
-  promise.catch(e =>  displayError(e.message))
+  firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
+  .then(function() {
+    return firebase.auth().signInWithEmailAndPassword(email, pass);
+  })
+  .catch(function(error) {
+    displayError(e.message);
+  });
 })
 
 // Sign up
-signUpForm.addEventListener('click', e => {
+$("#newUserBtn").on('click', e => {
   console.log('sign up was clicked');
   e.preventDefault()
   const email = signUpEmail.value
   const pass = signUpPassword.value
   const promise = auth.createUserWithEmailAndPassword(email, pass)
   promise.catch(e => displayError(e.message))
+
+  creatingNewUser = true;
 })
 
 // Log out
@@ -68,8 +79,9 @@ var uid = ""
 
 // Firebase monitors the Auth state in real time. Use this if/else statement to do things based on that state.
 firebase.auth().onAuthStateChanged(firebaseUser => {
+  
   if (firebaseUser){
-
+    uid = firebaseUser.uid
     //Everything in this if is for a logged in user
     console.log(firebaseUser)
     accountForm.classList.add('hide')
@@ -78,9 +90,20 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
     logoutButton.classList.remove('hide')
     authForm.classList.add('hide')
    /*  status.innerHTML = 'Status: <span class="status-green">logged in</span>' */
-    uid = firebaseUser.uid
-    localStorage.setItem("uid", uid) 
 
+   /* get this out to use for shit later */
+   loginButton.classList.add('hide')
+   logoutButton.classList.remove('hide')
+    
+    localStorage.setItem("uid", uid)
+
+  if (creatingNewUser) {
+      $.post("/api/user", {username: signUpScreenName.value, userFirebase: uid}, function(data) {
+        window.location.replace("/");
+      })
+    } else {
+      window.location.replace("/");
+    }
   } else {
 
     //Everything in this "else" is when no one is logged in
@@ -95,7 +118,8 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
 
 
 var displayError = (message) => {
-  console.log('this happened');
+  console.log('Displaying Error');
+  console.log(message)
   errors.innerHTML = message
   setTimeout(() => {
     errors.innerHTML = ""

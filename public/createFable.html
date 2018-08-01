@@ -116,12 +116,13 @@
       opening: $("#opening").val().trim()
     };
 
-    // Question: What does this code do??
-    $.post("/api/stories", newStory)
+
+    $.post("/api/story", newStory)
       .then(function(data) {
         console.log("add.html", data);
         alert("Adding story...");
       });
+    });
 </script>
 
     <!-- Firebase and app -->

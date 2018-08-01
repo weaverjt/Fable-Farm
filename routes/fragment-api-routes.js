@@ -1,10 +1,10 @@
 var db = require("../models");
 
 module.exports = function (app) {
-
+    var query = {};
     //get method for approved api fragments
     app.get("/api/fragments/:storyId", function (req, res) {
-        var query = {};
+       
         console.log(req.params.storyId);
         // query.UserId = req.query.userId;
         query.StoryId = req.params.storyId;

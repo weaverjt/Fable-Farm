@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Fable Farm | Home</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/style.css">
+
+</head>
+
+<body>
+
+    <nav class="sidenav" role="navigation">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a href="index.html">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li>
+                        <a href="profile.html">Profile</a>
+                    </li>
+                <li>
+                    <a href="fables.html">Fables</a>
+                </li>
+                <li>
+                        <a href="createFable.html">Create New Fable</a>
+                    </li>
+                    <li>
+                        <a href="devPage.html">About Dev.</a>
+                    </li>
+                    <li>
+                        <a id="login-button" href="login.html">Login/Sign-up</a>
+                    </li>
+                    <li>
+                        <a id="logout-button">Log out</a>
+                    </li>
+            </ul>
+        </div>
+    </nav>
+    
+ <div class="container" style="margin-top: 100px">
+<form id="authForm">
+    <div class="row" id="accountForm">
+        <h2 style="text-align:center">Login or sign up</h2>
+        <div class="vl">
+            <span class="vl-innertext">or</span>
+        </div>
+
+        <div class="col">
+            <div class="hide-md-lg">
+                <p>Sign in</p>
+            </div>
+
+            <input type="text" name="username" id="login-email" placeholder="Login Email">
+            <input type="password" name="password" id="login-password" placeholder="Password">
+            <input type="submit" id="login" value="Login">
+
+            <div class="col">
+                <a href="#" style="color:blue" class="btn">Forgot password?</a>
+            </div>
+        </div>
+
+        <div class="col" id="sign-up">
+            <input type="text" name="username" id="sign-up-email" placeholder="Login Email">
+            <input type="password" name="password" id="sign-up-password" placeholder="Password">
+            <input type="text" name="screenName" id="screenName" placeholder="Pen Name">
+            <input type="submit" id="newUserBtn" value="Create Account">
+        </div>
+
+    </div>
+</form>
+
+</div>
+
+
+        <!-- Firebase and app -->
+        <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+        <script src="/js/app.js" charset="utf-8"></script>
+    </body>
+
+</html>
