@@ -71,11 +71,11 @@
         <form>
         <div class="row" id="storyForm">
                 <h3>New story!</h3>
-                <input type="text" id="item" placeholder="Title" required>
-                <input type="text" id="item" placeholder="Setting" required>
-                <input type="text" id="item" placeholder="Genre" required>
-                <input type="text" id="item" placeholder="Opening Page" required>
-                <button type="submit">Add item</button>
+                <input type="title" id="title" placeholder="Title" required>
+                <input type="setting" id="setting" placeholder="Setting" required>
+                <input type="genre" id="genre" placeholder="Genre" required>
+                <input type="opening" id="opening" placeholder="Opening Page" required>
+                <button type="submit"id = "subStory">Add item</button>
             </div>
             
             <div class="row" id="characterForm">
@@ -105,6 +105,24 @@
     <!-- Status -->
     <p id="status"></p>
 </div>
+<script>
+    //We need to collect the items by id ex $("#title") to export and the DOM side API routes here
+    $("#subStory").on("click", function(event) {
+    event.preventDefault();
+    var newStory = {
+      title: $("#title").val().trim(),
+      setting: $("#setting").val().trim(),
+      genre: $("#genre").val().trim(),
+      opening: $("#opening").val().trim()
+    };
+
+    // Question: What does this code do??
+    $.post("/api/stories", newStory)
+      .then(function(data) {
+        console.log("add.html", data);
+        alert("Adding story...");
+      });
+</script>
 
     <!-- Firebase and app -->
     <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
