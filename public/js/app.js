@@ -7,6 +7,12 @@ var config = {
     storageBucket: "",
     messagingSenderId: "759325583688"
   };
+
+  var uidToExport = "";
+
+  var export1 ={
+    uid : uidToExport
+  }
 // Initialize Firebase
 firebase.initializeApp(config);
 
@@ -29,7 +35,7 @@ const loginPassword = document.getElementById('login-password')
 const signUpForm = document.getElementById('sign-up')
 const signUpEmail = document.getElementById('sign-up-email')
 const signUpPassword= document.getElementById('sign-up-password')
-const signUpScreenName = document.getElementById('screenName');
+const signUpScreenName = document.getElementById('sign-up-displayName');
 /* const signUpButton = document.getElementById('sign-up-button') */
 
 const logoutButton = document.getElementById('logout-button')
@@ -64,7 +70,6 @@ $("#newUserBtn").on('click', e => {
   const pass = signUpPassword.value
   const promise = auth.createUserWithEmailAndPassword(email, pass)
   promise.catch(e => displayError(e.message))
-
   creatingNewUser = true;
 })
 
@@ -82,6 +87,8 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
   
   if (firebaseUser){
     uid = firebaseUser.uid
+    uidToExport = uid;
+    Cookies.set("uid", uid);
     //Everything in this if is for a logged in user
     console.log(firebaseUser)
     accountForm.classList.add('hide')
@@ -97,8 +104,9 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
     
     localStorage.setItem("uid", uid)
 
-  if (creatingNewUser) {
-      $.post("/api/user", {username: signUpScreenName.value, userFirebase: uid}, function(data) {
+  if (creatingNewUser && signUpScreenName.value !== "") {
+
+      $.post("/api/user", {userName: signUpScreenName.value, userFirebase: uid}, function(data) {
         window.location.replace("/");
       })
     } else {
@@ -125,3 +133,5 @@ var displayError = (message) => {
     errors.innerHTML = ""
   }, 2000)
 }
+
+module.exports = export1;

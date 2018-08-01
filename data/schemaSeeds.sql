@@ -8,46 +8,62 @@ INSERT INTO categories (catName) VALUES ("Historical Fiction");
 INSERT INTO categories  (catName) VALUES ("Mystery/Triller");
 INSERT INTO categories (catName) VALUES ("Comedy");
 
+INSERT INTO users (userName,userFirebase,imageURL) VALUES("bob","undefined","<img : none>");
+INSERT INTO users (userName,userFirebase,imageURL) VALUES("billy","undefined","<img : none>");
+INSERT INTO users (userName,userFirebase,imageURL) VALUES("Joe","undefined","<img : none>");
+INSERT INTO users (userName,userFirebase,imageURL) VALUES("Cary","undefined","<img : none>");
+INSERT INTO users (userName,userFirebase,imageURL) VALUES("Jacob","undefined","<img : none>");
+INSERT INTO users (userName,userFirebase,imageURL) VALUES("Kevin","undefined","<img : none>");
+INSERT INTO users (userName,userFirebase,imageURL) VALUES("Eddie","undefined","<img : none>");
 
-UPDATE `sequelize_fable`.`fragments` SET `storyId`='1' WHERE `fragmentId`='2';
-UPDATE `sequelize_fable`.`fragments` SET `storyId`='1' WHERE `fragmentId`='1';
-UPDATE `sequelize_fable`.`fragments` SET `storyId`='1' WHERE `fragmentId`='3';
-UPDATE `sequelize_fable`.`fragments` SET `storyId`='1' WHERE `fragmentId`='4';
-UPDATE `sequelize_fable`.`fragments` SET `storyId`='1' WHERE `fragmentId`='5';
+-- INSERT INTO characters (charName,stories,userId) VALUES ("Hulk", "this is the story about Hulk",2);
+-- INSERT INTO characters (charName,stories,userId) VALUES ("SpongeBob", "this is the story about SpongeBob",3);
+-- INSERT INTO characters (charName,stories,userId) VALUES ("Bart Simpson", "this is the story about Bart Simpson",2);
+-- INSERT INTO characters (charName,stories,userId) VALUES ("Dracula", "this is the story about Dracula",4);
+-- INSERT INTO characters (charName,stories,userId) VALUES ("Mickey Mouse", "this is the story about Mickey Mouse",5);
+-- INSERT INTO characters (charName,stories,userId) VALUES ("Donal Trump", "this is the story about Donald Trump",1);
+-- INSERT INTO characters (charName,stories,userId) VALUES ("Magic Johnson", "this is the story about Magic Johnson",2);
 
-INSERT INTO `sequelize_fable`.`characters` (`charName`, `userId`) VALUES ('Char#1', '2');
+INSERT INTO characters (charName,userId) VALUES ("Hulk",2);
+INSERT INTO characters (charName,userId) VALUES ("SpongeBob",3);
+INSERT INTO characters (charName,userId) VALUES ("Bart Simpson",2);
+INSERT INTO characters (charName,userId) VALUES ("Dracula",4);
+INSERT INTO characters (charName,userId) VALUES ("Mickey Mouse",5);
+INSERT INTO characters (charName,userId) VALUES ("Donal Trump",1);
+INSERT INTO characters (charName,userId) VALUES ("Magic Johnson",2);
 
-INSERT INTO `sequelize_fable`.`stories` (`storyText`, `userId`, `catId`) VALUES ('Story #1', '1', '2');
+INSERT INTO stories (storyText,imageURL,iscompleted,categoryId,userId) VALUES ("This is Story #1","none",False,2,2);
+INSERT INTO stories (storyText,imageURL,iscompleted,categoryId,userId) VALUES ("This is Story #2","none",False,4,1);
+INSERT INTO stories (storyText,imageURL,iscompleted,categoryId,userId) VALUES ("This is Story #3","none",False,5,1);
+INSERT INTO stories (storyText,imageURL,iscompleted,categoryId,userId) VALUES ("This is Story #4","none",False,1,3);
+INSERT INTO stories (storyText,imageURL,iscompleted,categoryId,userId) VALUES ("This is Story #5","none",False,1,4);
+INSERT INTO stories (storyText,imageURL,iscompleted,categoryId,userId) VALUES ("This is Story #6","none",False,3,5);
+INSERT INTO stories (storyText,imageURL,iscompleted,categoryId,userId) VALUES ("This is Story #7","none",False,2,5);
+INSERT INTO stories (storyText,imageURL,iscompleted,categoryId,userId) VALUES ("This is Story #8","none",False,4,2);
+INSERT INTO stories (storyText,imageURL,iscompleted,categoryId,userId) VALUES ("This is Story #9","none",False,4,3);
+INSERT INTO stories (storyText,imageURL,iscompleted,categoryId,userId) VALUES ("This is Story #10","none",False,2,1);
+
+INSERT INTO fragments(fragmentText,status,previousId,userId,StoryId) VALUES ("this is my contribution #1",false,0,1,1);
+INSERT INTO fragments(fragmentText,status,previousId,userId,StoryId) VALUES ("this is my contribution #2",false,0,4,1);
+INSERT INTO fragments(fragmentText,status,previousId,userId,StoryId) VALUES ("this is my contribution #3",false,0,3,1);
+INSERT INTO fragments(fragmentText,status,previousId,userId,StoryId) VALUES ("this is my contribution #4",false,0,4,1);
+INSERT INTO fragments(fragmentText,status,previousId,userId,StoryId) VALUES ("this is my contribution #5",false,0,1,2);
+INSERT INTO fragments(fragmentText,status,previousId,userId,StoryId) VALUES ("this is my contribution #6",false,0,1,3);
+INSERT INTO fragments(fragmentText,status,previousId,userId,StoryId) VALUES ("this is my contribution #7",false,0,1,4);
+INSERT INTO fragments(fragmentText,status,previousId,userId,StoryId) VALUES ("this is my contribution #8",false,0,2,2);
+INSERT INTO fragments(fragmentText,status,previousId,userId,StoryId) VALUES ("this is my contribution #9",false,0,3,2);
+INSERT INTO fragments(fragmentText,status,previousId,userId,StoryId) VALUES ("this is my contribution #10",false,0,5,2);
+INSERT INTO fragments(fragmentText,status,previousId,userId,StoryId) VALUES ("this is my contribution #11",false,0,4,3);
+INSERT INTO fragments(fragmentText,status,previousId,userId,StoryId) VALUES ("this is my contribution #12",false,0,2,3);
+INSERT INTO fragments(fragmentText,status,previousId,userId,StoryId) VALUES ("this is my contribution #13",false,0,4,5);
+INSERT INTO fragments(fragmentText,status,previousId,userId,StoryId) VALUES ("this is my contribution #14",false,0,5,6);
+INSERT INTO fragments(fragmentText,status,previousId,userId,StoryId) VALUES ("this is my contribution #15",false,0,3,5);
+INSERT INTO fragments(fragmentText,status,previousId,userId,StoryId) VALUES ("this is my contribution #16",false,0,2,5);
+INSERT INTO fragments(fragmentText,status,previousId,userId,StoryId) VALUES ("this is my contribution #17",false,0,1,6);
+INSERT INTO fragments(fragmentText,status,previousId,userId,StoryId) VALUES ("this is my contribution #18",false,0,1,7);
 
 
-INSERT INTO `sequelize_fable`.`users` (`imageURL`, `userName`) VALUES ('<none>', 'Jake');
-
-
-
-INSERT INTO `sequelize_fable`.`fragments` (`fragmentText`, `status`, `previousId`, `userId`) VALUES ('this is my contribution #1', 'false', 'none', '1');
-
-INSERT INTO `sequelize_fable`.`fragments` (`fragmentText`, `status`, `previousId`, `userId`) VALUES ('this is my contribution user#2', 'false', 'none', '2');
-
-INSERT INTO `sequelize_fable`.`fragments` (`fragmentText`, `status`, `previousId`, `userId`) VALUES ('this is my contribution user#3', 'false', 'none', '3');
-
-INSERT INTO `sequelize_fable`.`fragments` (`fragmentText`, `status`, `previousId`, `userId`) VALUES ('this is my contribution user#4', 'false', 'none', '4');
-
-
-INSERT INTO `sequelize_fable`.`fragments` (`fragmentText`, `status`, `previousId`, `userId`, `storyId`) VALUES ('2nd fragment story 1 user#1', '0', '4', '1', '1');
-INSERT INTO `sequelize_fable`.`fragments` (`fragmentText`, `status`, `previousId`, `userId`, `storyId`) VALUES ('2nd fragment story 1 user#2', '0', '4', '2', '1');
-INSERT INTO `sequelize_fable`.`fragments` (`fragmentText`, `status`, `previousId`, `userId`, `storyId`) VALUES ('2nd fragment story 1 user#3', '0', '4', '3', '1');
-INSERT INTO `sequelize_fable`.`fragments` (`fragmentText`, `status`, `previousId`, `userId`, `storyId`) VALUES ('2nd fragment story 1 user#4', '0', '4', '4', '1');
-INSERT INTO `sequelize_fable`.`fragments` (`fragmentText`, `status`, `previousId`, `userId`, `storyId`) VALUES ('contribution story #3 user #1', '0', '0', '3', '3');
-
-INSERT INTO `sequelize_fable`.`stories` (`storyText`, `userId`, `catId`) VALUES ('Story #2', '3', '4');
-INSERT INTO `sequelize_fable`.`stories` (`storyText`, `userId`, `catId`) VALUES ('Story #3', '4', '1');
-
-select * from categories;
-select * from stories;
 select * from fragments;
 select * from characters;
-select * from users
-
-
-
-
+select * from stories;
+select * from users;

@@ -1,10 +1,9 @@
-var UID = FirebaseID_ToBe
 
-$(document).ready(function(){
-    console.log("hello world");
-    SetDropDownUser();
-    SetDropDownCat();
-})
+
+var firebaseId = require("./app");
+var UID = firebaseId.uid
+
+
 
 
 function SetDropDownUser()
