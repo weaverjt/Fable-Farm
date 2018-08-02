@@ -20,7 +20,7 @@ $(document).ready(function () {
 $(document).on("click", ".viewStoryBtn", function () {
     event.preventDefault();
     var storyID = $(this).val();
-    location.replace("/stories/storyid#" + storyID);
+    location.replace("/viewFullStory/storyid#" + storyID);
 }
 )
 
