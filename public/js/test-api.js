@@ -93,7 +93,7 @@ $(document).on("click","#checkUser",function(){
 
     for (var s in data.Stories)
     {
-        $("#storyContainer").append(`<p>we found that you are the ADMIN/CREATOR :  ${data.Stories[s].storyText}</p>`)
+        $("#storyContainer").append(`<p>we found that you are the ADMIN/CREATOR :  ${data.Stories[s].title}</p>`)
     }
 
     for (var f in data.Fragments)
@@ -116,7 +116,7 @@ $(document).on("click","#sortCat",function(){
 
         for (var s in data.Stories)
         {
-            $("#storiesContainer").append(`<p>we found :  ${data.Stories[s].storyText} as a Story</p>`);
+            $("#storiesContainer").append(`<p>we found :  ${data.Stories[s].title} as a Story</p>`);
             var newbutton = $("<button>");
             newbutton.attr("value",data.Stories[s].id);
             newbutton.addClass("storiesButtons");
