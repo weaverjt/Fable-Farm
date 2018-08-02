@@ -25,7 +25,7 @@ module.exports = function(app) {
                 Id:req.params.id
             },
             // include: [{all: true}]
-            include : [db.Story,db.Character,db.Fragment]
+            include : [{model: db.Story, include: [db.Category]},db.Character,db.Fragment]
         }).then(function(dbUser) {
             res.json(dbUser)
         })
