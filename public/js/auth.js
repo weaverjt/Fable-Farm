@@ -57,6 +57,7 @@ logoutButton.addEventListener('click', () => {
   console.log("remove cookies!!!");
   $.removeCookie('userId'); // remove cookie
   $.removeCookie('uid');
+  $.removeCookie("userImg");
   auth.signOut()
   location.reload(); //refresh page
 })
