@@ -4,6 +4,7 @@ let imageUrl;
 
 
 $(document).ready(function () {
+    $("#profile").empty();
     console.log("Hello Profile");
 
     var userUId = $.cookie('uid');
@@ -18,6 +19,9 @@ $(document).ready(function () {
                 id = data.id;
                 name = data.userName;
                 imageUrl = data.imageURL;
+                // create cookie userId for all the pages
+                $.cookie('userId', data.id, { expires: 7, path: '/' });
+                $("#profile").html(`<h3>Welcome ${name} </h3>`)
 
                 RetrieveUserInfo(id);
                 $("#userImg").attr("src", imageUrl);

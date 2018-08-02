@@ -1,14 +1,14 @@
 // Firebase config
 var config = {
-    apiKey: "AIzaSyAPKqSS7V9aSDRqoFDjEuHYtTmWQ6kf9KA",
-    authDomain: "fable-farm.firebaseapp.com",
-    databaseURL: "https://fable-farm.firebaseio.com",
-    projectId: "fable-farm",
-    storageBucket: "",
-    messagingSenderId: "759325583688"
-  };
+  apiKey: "AIzaSyAPKqSS7V9aSDRqoFDjEuHYtTmWQ6kf9KA",
+  authDomain: "fable-farm.firebaseapp.com",
+  databaseURL: "https://fable-farm.firebaseio.com",
+  projectId: "fable-farm",
+  storageBucket: "",
+  messagingSenderId: "759325583688"
+};
 
-  var uidToExport = "";
+var uidToExport = "";
 // Initialize Firebase
 firebase.initializeApp(config);
 
@@ -31,7 +31,7 @@ const forgottenId = document.getElementById('forgottenId')
 
 const signUpForm = document.getElementById('sign-up')
 const signUpEmail = document.getElementById('sign-up-email')
-const signUpPassword= document.getElementById('sign-up-password')
+const signUpPassword = document.getElementById('sign-up-password')
 const signUpScreenName = document.getElementById('sign-up-displayName');
 const signUpImgUrl = document.getElementById('sign-up-Img');
 /* const signUpButton = document.getElementById('sign-up-button') */
@@ -64,12 +64,12 @@ loginForm.addEventListener('click', e => {
   const email = loginEmail.value
   const pass = loginPassword.value
   firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
-  .then(function() {
-    return firebase.auth().signInWithEmailAndPassword(email, pass);
-  })
-  .catch(function(error) {
-    displayError(e.message);
-  });
+    .then(function () {
+      return firebase.auth().signInWithEmailAndPassword(email, pass);
+    })
+    .catch(function (error) {
+      displayError(e.message);
+    });
 })
 
 // Sign up
@@ -85,11 +85,11 @@ $("#newUserBtn").on('click', e => {
 
 // Log out
 logoutButton.addEventListener('click', () => {
+
   console.log("Log out was clicked")
-  $.removeCookie('userId'); // remove cookie
-  $.removeCookie('uid');
+
   auth.signOut()
-  
+
 })
 
 // UID is global so it can be accessed anywhere
@@ -97,28 +97,29 @@ var uid = ""
 
 // Firebase monitors the Auth state in real time. Use this if/else statement to do things based on that state.
 firebase.auth().onAuthStateChanged(firebaseUser => {
-  
-  if (firebaseUser){
+
+  if (firebaseUser) {
     uid = firebaseUser.uid
     uidToExport = uid;
     Cookies.set("uid", uid);
     //Everything in this if is for a logged in user
     console.log(firebaseUser)
-   /*  status.innerHTML = 'Status: <span class="status-green">logged in</span>' */
 
-   /* login-auth-status hide/show code */
-   loginButton.classList.add('hide')
-   logoutButton.classList.remove('hide')
+    /*  status.innerHTML = 'Status: <span class="status-green">logged in</span>' */
+
+    /* login-auth-status hide/show code */
+    loginButton.classList.add('hide')
+    logoutButton.classList.remove('hide')
 
     /* jumbo-auth-status hide/show code */
-   farmJumbo.classList.add('hide')
-   userJumbo.classList.remove('hide')
-    
+    farmJumbo.classList.add('hide')
+    userJumbo.classList.remove('hide')
+
     localStorage.setItem("uid", uid)
 
-  if (creatingNewUser && signUpScreenName.value !== "") {
+    if (creatingNewUser && signUpScreenName.value !== "") {
 
-      $.post("/api/user", {userName: signUpScreenName.value, userFirebase: uid, imageURL: signUpImgUrl.value}, function(data) {
+      $.post("/api/user", { userName: signUpScreenName.value, userFirebase: uid, imageURL: signUpImgUrl.value }, function (data) {
         window.location.replace("/");
       })
     } else {
@@ -134,7 +135,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
     farmJumbo.classList.remove('hide')
     userJumbo.classList.add('hide')
 
- /*    status.innerHTML = 'Status: <span class="status-red">not logged in</span>' */
+    /*    status.innerHTML = 'Status: <span class="status-red">not logged in</span>' */
   }
 })
 

@@ -1,62 +1,67 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>TESTING PAGE</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">   
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="js/jquery_cookie.js"></script>
-    <script src="js/main.js"></script>
-    
+    <script src="js/test-api.js"></script>
+
 
 
 </head>
-<body>
-   <h1> HELLO WELCOME TESTING PAGE</h1>
-   <h2>List of available users : </h2>
-<div class="dropdown_users">    
-</div><button id="checkUser">What links user </button>
-<hr> 
-<div id="charContainer"></div>
-<hr> 
-<div id="storyContainer"></div>
-<hr> 
-<div id="fragContainer"></div>
-<hr>
-<br>
-<br>
-<h2>List of stories available : </h2>
-<div class="dropdown_cat"></div><button id="sortCat">Sort by Categories </button>
-<div id="storiesContainer"></div>
-<hr>
-<br>
-<h2>List of fragments available for this stories : </h2>
-<div id="adminContainer"></div>
-<hr>
-<br>
-<br>
-<div id="PostStories"> <h2>Post stories form</h2>
-    user Id:<br>
-  <input type="text" id="userId" name="user" placeholder="1.">
-  <br>
-  Story Id:<br>
-  <input type="text" id="storyId" name="story"  placeholder="1.">
-  <br>
-  Fragment Text:<br>
-  <textarea rows="4" cols="50" id="fragText" name="frag"  placeholder="this is your fragment"></textarea>
-  <br><br>
- 
-  Status :
-  <select id="status">
-        <option value="0">false</option>
-        <option value="1">true</option>   
-  </select>
-  <input type="submit" value="Submit" id="submitFrag">
-    
 
-</div>
+<body>
+    <h1> HELLO WELCOME TESTING PAGE</h1>
+    <h2>List of available users : </h2>
+    <div class="dropdown_users">
+    </div>
+    <button id="checkUser">What links user </button>
+    <hr>
+    <div id="charContainer"></div>
+    <hr>
+    <div id="storyContainer"></div>
+    <hr>
+    <div id="fragContainer"></div>
+    <hr>
+    <br>
+    <br>
+    <h2>List of stories available : </h2>
+    <div class="dropdown_cat"></div>
+    <button id="sortCat">Sort by Categories </button>
+    <div id="storiesContainer"></div>
+    <hr>
+    <br>
+    <h2>List of fragments available for this stories : </h2>
+    <div id="adminContainer"></div>
+    <hr>
+    <br>
+    <br>
+    <div id="PostStories">
+        <h2>Post stories form</h2>
+        user Id:
+        <br>
+        <input type="text" id="userId" name="user" placeholder="1.">
+        <br> Story Id:
+        <br>
+        <input type="text" id="storyId" name="story" placeholder="1.">
+        <br> Fragment Text:
+        <br>
+        <textarea rows="4" cols="50" id="fragText" name="frag" placeholder="this is your fragment"></textarea>
+        <br>
+        <br> Status :
+        <select id="status">
+            <option value="0">false</option>
+            <option value="1">true</option>
+        </select>
+        <input type="submit" value="Submit" id="submitFrag">
+
+
+    </div>
 
 </body>
 
