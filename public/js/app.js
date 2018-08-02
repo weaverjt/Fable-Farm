@@ -26,6 +26,7 @@ const authForm = document.getElementById('authForm')
 const loginForm = document.getElementById('login')
 const loginEmail = document.getElementById('login-email')
 const loginPassword = document.getElementById('login-password')
+const forgottenId = document.getElementById('forgottenId')
 /* const loginButton = document.getElementById('login-button') */
 
 const signUpForm = document.getElementById('sign-up')
@@ -44,6 +45,15 @@ const errors = document.getElementById('errors')
 
 const accountForm = document.getElementById('accountForm')
 const toDoList = document.getElementById('to-do-list')
+
+/* Jumbotron variables */
+const farmJumbo = document.getElementById('farmJumbo')
+const userJumbo = document.getElementById('userJumbo')
+
+
+//forgotten id
+
+
 
 // Log in
 $.removeCookie('uid'); // remove cookie
@@ -96,9 +106,13 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
     console.log(firebaseUser)
    /*  status.innerHTML = 'Status: <span class="status-green">logged in</span>' */
 
-   /* get this out to use later */
+   /* login-auth-status hide/show code */
    loginButton.classList.add('hide')
    logoutButton.classList.remove('hide')
+
+    /* jumbo-auth-status hide/show code */
+   farmJumbo.classList.add('hide')
+   userJumbo.classList.remove('hide')
     
     localStorage.setItem("uid", uid)
 
@@ -116,6 +130,10 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
     console.log('not logged in')
     logoutButton.classList.add('hide')
     loginButton.classList.remove('hide')
+
+    farmJumbo.classList.remove('hide')
+    userJumbo.classList.add('hide')
+
  /*    status.innerHTML = 'Status: <span class="status-red">not logged in</span>' */
   }
 })
@@ -130,4 +148,6 @@ var displayError = (message) => {
   }, 2000)
 }
 
+/* This is erring!!! */
 module.exports = uidToExport;
+/* !!!! */
