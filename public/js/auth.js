@@ -20,18 +20,20 @@ const errors = document.getElementById('errors')
 const logoutButton = document.getElementById('logout-button')
 const loginButton = document.getElementById('login-button')
 
+//for the jumbotron
+const farmJumbo = document.getElementById('farmJumbo')
+const userJumbo = document.getElementById('userJumbo')
+
+
 /* this is for the profile page */
 const myStoryList = document.getElementById('myStoryList')
 const myCharacterList = document.getElementById('myCharacterList')
 
 /* This is for the Create page */
-const storyForm = document.getElementById('storyForm')
-const characterForm = document.getElementById('characterForm')
-
+/* const storyForm = document.getElementById('storyForm')
+const characterForm = document.getElementById('characterForm') */
 /* const Switch = document.getElementById('Switch')
-
 //Code to show/hide the create forms using the toggle switch 
-
  Switch.addEventListener('tap', () => {
   if (Switch.option.value == "story") {
     console.log("story")
@@ -42,9 +44,7 @@ const characterForm = document.getElementById('characterForm')
     storyForm.classList.add('hide')
     characterForm.classList.remove('hide')
   }
-
 })  */
-
 
 // Log out
 logoutButton.addEventListener('click', () => {
@@ -57,7 +57,58 @@ var uid = ""
 
 // Firebase monitors the Auth state in real time. Use this if/else statement to do things based on that state.
 firebase.auth().onAuthStateChanged(firebaseUser => {
+<<<<<<< HEAD
     if (firebaseUser){
+=======
+  if (firebaseUser){
+
+    //Everything in this if is for a logged in user
+    console.log(firebaseUser)
+   /*  status.innerHTML = 'Status: <span class="status-green">logged in</span>' */
+
+   /* get this out to use for shit later */
+   farmJumbo.classList.add('hide')
+   userJumbo.classList.remove('hide')
+
+   loginButton.classList.add('hide')
+   logoutButton.classList.remove('hide')
+   
+    uid = firebaseUser.uid
+    localStorage.setItem("uid", uid) 
+
+  } else {
+
+    //Everything in this "else" is when no one is logged in
+    console.log('not logged in')
+    farmJumbo.classList.remove('hide')
+    userJumbo.classList.add('hide')
+
+    logoutButton.classList.add('hide')
+    loginButton.classList.remove('hide')
+ /*    status.innerHTML = 'Status: <span class="status-red">not logged in</span>' */
+  }
+})
+ 
+
+/*   
+  // create new story
+  storyForm.addEventListener('submit', e => {
+      console.log('Story was added to your list!');
+      e.preventDefault()
+      
+    })
+  // create new character
+  characterForm.addEventListener('submit', e => {
+      console.log('Character was added to your list!');
+      e.preventDefault() 
+    })
+  
+   */
+  
+  /* 
+  firebase.auth().onToggle(firebaseUser => {
+    if (toggle == true){
+>>>>>>> 9f7ed6733856a18af20d1f39f6a712fedb3621df
   
       //Everything in this if is for a logged in user
       console.log(firebaseUser)
