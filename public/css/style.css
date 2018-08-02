@@ -18,6 +18,7 @@
     background-color: #79abd2;
     margin-top: 10px;
     max-height: 235px;
+    border-radius: 1.25rem;
 }
 
 #jumboAbout{
@@ -47,6 +48,7 @@
     display: flex;
     z-index: 0;
     margin-left: -85px;
+    border-radius: 1.25rem;
 }
 
 .card-text{
@@ -281,17 +283,60 @@ input[type=submit]:hover {
 
 /* devPage-css */
 
+#header
+
 header{
-
+    font-style: underline;
 }
 
-h3{
+h3 {
+    font-weight: bolder;
+    z-index: 0;
+    background-color: aliceblue;
+    width: 300px;
+    border-radius: 1.25rem;
+    padding-top: 15px;
+    padding-left: 10px;
+    height: 260px;
+    margin-top: 0px;
+}
+.devPic {
+    max-width: 200px;
+    max-height: 200px;
+    width: auto;
+    height: auto;
+    z-index: 1;
+    margin-left: -227px;
+    margin-top: 45px;
+    margin-right: 105px;
+    padding-left: 7px;
+    padding-top: 7px;
+    padding-right: 3px;
+    padding-bottom: 3px;
+    border-radius: 1.25rem;
+    background-color: grey;
+}
+
+#rowDev {
+    background-color: #79abd2;
+    margin-bottom: 10px;
+    padding-top: 30px;
+    margin-top: 10px;
+    border-radius: 1.25rem;
+    height: 315px;
+}
+
+#aboutProjectDev{
 
 }
-p{
-
+.info-text {
+    background-color: aliceblue;
+    font-size: 22px;
+    padding-top: 10px;
+    border-radius: 1.25rem;
+    width: auto;
+    height: 250px;
 }
-
 
 
 /* _______________________ */
