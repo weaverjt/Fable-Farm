@@ -9,6 +9,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" media="screen" href="./css/style.css">
+
+    <script src="js/createFable.js"></script>
 </head>
 
 
@@ -76,11 +78,11 @@
 
         <form>
         <div class="row" id="storyForm">
-                <input type="text" id="item" placeholder="Title" required>
-                <input type="text" id="item" placeholder="Setting" required>
-                <input type="text" id="item" placeholder="Genre" required>
-                <input type="text" id="item" placeholder="Opening Page" required>
-                <button type="submit">Create Story!</button>
+            <p>Title : <input type="text" id="title" placeholder="Title" required> </p>
+            <p>Settings :  <input type="text" id="setting" placeholder="Setting" required> </p>             
+            <p>Opening Page :  <input type="text" id="opening" placeholder="Opening Page" required> </p>
+                <div class="dropGenre"> <h3>Choose your genre</h3> : </div><br>
+                <button type="submit" id="createStory">Create Story!</button>
             </div>
             
             <div class="row" id="characterForm">
