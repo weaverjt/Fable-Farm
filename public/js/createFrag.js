@@ -1,13 +1,25 @@
 
 $(document).on("click","#submitFrag",function(){
-
+    console.log("clicked");
     var userId=$.cookie('userId')
+     console.log(userId);
+
+   var urlfilter=window.location.hash;
+
+   console.log("urlfilter",urlfilter);
+
+   var storyId = urlfilter.slice(1); 
+   
+   console.log(storyId);
+
+     
+
 
     if(userId) {
         console.log("submit yeaaahhh");
         var data={
             UserId: userId,
-            StoryId: $("#storyId").val().trim(),
+            StoryId: storyId,
             fragmentText:$("#fragText").val().trim(),
             status: $("#status option:selected").val(),
     
@@ -28,7 +40,7 @@ $(document).on("click","#submitFrag",function(){
     else
     {
         alert("you are not logged in , please log-in first");
-        window.location.href("/login");
+        location.replace("/");
     }
 
 
