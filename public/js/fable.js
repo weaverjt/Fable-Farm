@@ -7,7 +7,7 @@ $(document).ready(function(){
 
             $("#storyList> tbody").append("<tr><td>" + i + "</td><td>" + data[i].title + "</td><td>" +
             data[i].settings + "</td><td>" + data[i].storyText + "</td><td>" + data[i].Category.catName 
-            + "</td><td>" + "<button>Create Frag</button>"+"</td><td>" +"<button>View Full Story</button>" + "</td></tr>");
+            + "</td><td>" + "<button>Create Frag</button>"+"</td><td>" + `<button id="story${i+1}-Btn">View Full Story</button>` + "</td></tr>");
             
 
         }
