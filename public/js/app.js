@@ -26,12 +26,14 @@ const authForm = document.getElementById('authForm')
 const loginForm = document.getElementById('login')
 const loginEmail = document.getElementById('login-email')
 const loginPassword = document.getElementById('login-password')
+const forgottenId = document.getElementById('forgottenId')
 /* const loginButton = document.getElementById('login-button') */
 
 const signUpForm = document.getElementById('sign-up')
 const signUpEmail = document.getElementById('sign-up-email')
 const signUpPassword= document.getElementById('sign-up-password')
 const signUpScreenName = document.getElementById('sign-up-displayName');
+const signUpImgUrl = document.getElementById('sign-up-Img');
 /* const signUpButton = document.getElementById('sign-up-button') */
 
 const logoutButton = document.getElementById('logout-button')
@@ -44,9 +46,18 @@ const errors = document.getElementById('errors')
 const accountForm = document.getElementById('accountForm')
 const toDoList = document.getElementById('to-do-list')
 
-// // Log in
-// $.removeCookie('uid'); // remove cookie
-// $.removeCookie('userId'); // remove cookie
+/* Jumbotron variables */
+const farmJumbo = document.getElementById('farmJumbo')
+const userJumbo = document.getElementById('userJumbo')
+
+
+//forgotten id
+
+
+
+// Log in
+$.removeCookie('uid'); // remove cookie
+$.removeCookie('userId'); // remove cookie
 loginForm.addEventListener('click', e => {
   console.log('log in was clicked');
   e.preventDefault()
@@ -96,15 +107,19 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
 
    /*  status.innerHTML = 'Status: <span class="status-green">logged in</span>' */
 
-   /* get this out to use for shit later */
+   /* login-auth-status hide/show code */
    loginButton.classList.add('hide')
    logoutButton.classList.remove('hide')
+
+    /* jumbo-auth-status hide/show code */
+   farmJumbo.classList.add('hide')
+   userJumbo.classList.remove('hide')
     
     localStorage.setItem("uid", uid)
 
   if (creatingNewUser && signUpScreenName.value !== "") {
 
-      $.post("/api/user", {userName: signUpScreenName.value, userFirebase: uid}, function(data) {
+      $.post("/api/user", {userName: signUpScreenName.value, userFirebase: uid, imageURL: signUpImgUrl.value}, function(data) {
         window.location.replace("/");
       })
     } else {
@@ -116,6 +131,10 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
     console.log('not logged in')
     logoutButton.classList.add('hide')
     loginButton.classList.remove('hide')
+
+    farmJumbo.classList.remove('hide')
+    userJumbo.classList.add('hide')
+
  /*    status.innerHTML = 'Status: <span class="status-red">not logged in</span>' */
   }
 })
@@ -130,4 +149,6 @@ var displayError = (message) => {
   }, 2000)
 }
 
+/* This is erring!!! */
 module.exports = uidToExport;
+/* !!!! */
