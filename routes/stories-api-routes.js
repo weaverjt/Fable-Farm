@@ -35,8 +35,15 @@ module.exports = function(app) {
             },
             // include: [{all: true}]
             include : [db.Fragment]
-        }).then(function(dbUser) {
-            res.json(dbUser)
+        }).then(function(dbStory) {
+            res.json(dbStory)
+        })
+    })
+
+    app.get("/api/stories", function(req, res) {      //success
+        db.Story.findAll({include: [db.Category]
+        }).then(function(dbStory) {
+            res.json(dbStory)
         })
     })
 
