@@ -1,5 +1,5 @@
 {
-  "name": "farble-farm",
+  "name": "fable-farm",
   "version": "1.0.0",
   "description": "2nd Group Project for U of M Coding Bootcamp, created by Edison Yang, Kevin Monahan, Cary Mclaughlin, and Jacob Weaver.",
   "main": "index.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/weaverjt/Farble-Farm.git"
+    "url": "git+https://github.com/weaverjt/Fable-Farm.git"
   },
   "author": "Kevin Monahan, Edison Yang, Cary Mclaughlin, and Jacob Weaver",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/weaverjt/Farble-Farm/issues"
+    "url": "https://github.com/weaverjt/Fable-Farm/issues"
   },
-  "homepage": "https://github.com/weaverjt/Farble-Farm#readme",
+  "homepage": "https://github.com/weaverjt/Fable-Farm#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
