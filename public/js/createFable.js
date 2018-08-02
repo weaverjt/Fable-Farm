@@ -42,7 +42,9 @@ $(document).on("click", "#createStory", function () {
     }
 
     $.post("/api/story", newStory, function (data) {
+        console.log("Story successfully created!");
         window.location.replace("/fables");
+        
     })
 
     // $.ajax({
