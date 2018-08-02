@@ -30,6 +30,7 @@ module.exports = function(app) {
             res.json(dbUser)
         })
     })
+<<<<<<< HEAD
 
     app.get("/api/user/:uid", function(req, res) {
         db.User.findOne({
@@ -41,6 +42,22 @@ module.exports = function(app) {
             res.json(dbUser);
         })
     })
+=======
+    //get One User firebase
+    app.get("/api/users/:UID", function(req, res) {              //success
+        db.User.findOne({
+            where: {
+                userfirebase:req.params.UID
+            },
+            // include: [{all: true}]
+       
+        }).then(function(dbUser) {
+            res.json(dbUser)
+        })
+    })
+
+
+>>>>>>> 2620bc4ca18ec5a0d08ff12762126b532a6f774e
     //update
     app.put("/api/user/:id", function(req, res) {          //success
         db.User.update(req.body,{
