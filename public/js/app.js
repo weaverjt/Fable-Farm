@@ -32,6 +32,7 @@ const signUpForm = document.getElementById('sign-up')
 const signUpEmail = document.getElementById('sign-up-email')
 const signUpPassword= document.getElementById('sign-up-password')
 const signUpScreenName = document.getElementById('sign-up-displayName');
+const signUpImgUrl = document.getElementById('sign-up-Img');
 /* const signUpButton = document.getElementById('sign-up-button') */
 
 const logoutButton = document.getElementById('logout-button')
@@ -95,7 +96,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
     console.log(firebaseUser)
    /*  status.innerHTML = 'Status: <span class="status-green">logged in</span>' */
 
-   /* get this out to use for shit later */
+   /* get this out to use later */
    loginButton.classList.add('hide')
    logoutButton.classList.remove('hide')
     
@@ -103,7 +104,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
 
   if (creatingNewUser && signUpScreenName.value !== "") {
 
-      $.post("/api/user", {userName: signUpScreenName.value, userFirebase: uid}, function(data) {
+      $.post("/api/user", {userName: signUpScreenName.value, userFirebase: uid, imageURL: signUpImgUrl.value}, function(data) {
         window.location.replace("/");
       })
     } else {
