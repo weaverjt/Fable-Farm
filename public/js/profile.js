@@ -49,16 +49,16 @@ function RetrieveUserInfo(id) {
     $.get("/api/users/" + id, function (data) {
         console.log(data);
 
-        for (var c in data.Characters) {
-            $("#charContainer").append(`<p>we found :  ${data.Characters[c].charName} as a character</p>`)
-        }
+        // for (var c in data.Characters) {
+        //     $("#charContainer").append(`<p>we found :  ${data.Characters[c].charName} as a character</p>`)
+        // }
 
         for (var s in data.Stories) {
-            $("#storyContainer").append(`<p>we found that you are the ADMIN/CREATOR :  ${data.Stories[s].title}</p>`)
+            $("#myStoryList").append(`<p>we found that you are the ADMIN/CREATOR :  ${data.Stories[s].title}</p>`)
         }
 
         for (var f in data.Fragments) {
-            $("#fragContainer").append(`<p>we found :  ${data.Fragments[f].fragmentText} as a fragment of story id : ${data.Fragments[f].StoryId}<p>`)
+            $("#myFrags").append(`<p>we found :  ${data.Fragments[f].fragmentText} as a fragment of story id : ${data.Fragments[f].StoryId}<p>`)
         }
 
     })

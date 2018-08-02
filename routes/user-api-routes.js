@@ -37,7 +37,7 @@ module.exports = function(app) {
                 userFirebase:req.params.uid
             },
             // include: [{all: true}]
-            include : [db.Story,db.Character,db.Fragment]
+            include : [{all: true}]
         }).then(function(dbUser) {
             res.json(dbUser)
         })

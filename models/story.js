@@ -2,7 +2,7 @@ module.exports = function(sequelize, DataTypes) {
     var Story = sequelize.define("Story", {
       // Giving the Author model a name of type STRING
       title :   DataTypes.STRING,
-      settings: DataTypes.STRING,
+      settings : DataTypes.STRING,
       storyText : DataTypes.STRING,
       imageURL : DataTypes.STRING,
       isCompleted : {type: DataTypes.BOOLEAN,defaultValue: false, allowNull: false  },
@@ -17,7 +17,7 @@ module.exports = function(sequelize, DataTypes) {
             }
             });
 
-        Story.belongsTo(models.User, {
+        Story.belongsTo(models.User , {
             foreignKey: {
             allowNull: false
             }

@@ -40,17 +40,20 @@ function SetDropDownCat()
         settings : $("#setting").val().trim(),
         storyText : $("#opening").val().trim(),
         CategoryId : $("#drpCat option:selected").val().trim(),
-        UserId : $.cookie('userId'), //value by default , will change when UID firebase available!!!
-        imageURL : "<none>",
+        UserId : $.cookie('userId') //value by default , will change when UID firebase available!!!
     }
 
-    $.ajax({
-        method: "POST",
-        url: "/api/story/",
-        data : newStory
-      })
-        .then(function() {
-         console.log(" Story created Successfully!!");
-        });
+    $.post("/api/story", newStory, function(data){
+        window.location.replace("/fables");
+    })
+
+    // $.ajax({
+    //     method: "POST",
+    //     url: "/api/story/",
+    //     data : newStory
+    //   })
+    //     .then(function() {
+    //      console.log(" Story created Successfully!!");
+    //     });
  }
 )
