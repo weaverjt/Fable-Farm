@@ -32,16 +32,16 @@ INSERT INTO characters (charName,userId) VALUES ("Mickey Mouse",5);
 INSERT INTO characters (charName,userId) VALUES ("Donal Trump",1);
 INSERT INTO characters (charName,userId) VALUES ("Magic Johnson",2);
 
-INSERT INTO stories (storyText,imageURL,iscompleted,categoryId,userId) VALUES ("This is Story #1","none",False,2,2);
-INSERT INTO stories (storyText,imageURL,iscompleted,categoryId,userId) VALUES ("This is Story #2","none",False,4,1);
-INSERT INTO stories (storyText,imageURL,iscompleted,categoryId,userId) VALUES ("This is Story #3","none",False,5,1);
-INSERT INTO stories (storyText,imageURL,iscompleted,categoryId,userId) VALUES ("This is Story #4","none",False,1,3);
-INSERT INTO stories (storyText,imageURL,iscompleted,categoryId,userId) VALUES ("This is Story #5","none",False,1,4);
-INSERT INTO stories (storyText,imageURL,iscompleted,categoryId,userId) VALUES ("This is Story #6","none",False,3,5);
-INSERT INTO stories (storyText,imageURL,iscompleted,categoryId,userId) VALUES ("This is Story #7","none",False,2,5);
-INSERT INTO stories (storyText,imageURL,iscompleted,categoryId,userId) VALUES ("This is Story #8","none",False,4,2);
-INSERT INTO stories (storyText,imageURL,iscompleted,categoryId,userId) VALUES ("This is Story #9","none",False,4,3);
-INSERT INTO stories (storyText,imageURL,iscompleted,categoryId,userId) VALUES ("This is Story #10","none",False,2,1);
+INSERT INTO stories (title,settings,storyText,imageURL,iscompleted,categoryId,userId) VALUES ("This is Story #1","winter in northLands","Once upon a time there was...","none",False,2,2);
+INSERT INTO stories (title,settings,storyText,imageURL,iscompleted,categoryId,userId) VALUES ("This is Story #2","On Planet Xzibit-1599","Once upon a time there was...","none",False,4,1);
+INSERT INTO stories (title,settings,storyText,imageURL,iscompleted,categoryId,userId) VALUES ("This is Story #3","in Paris - 1948","Once upon a time there was...","none",False,5,1);
+INSERT INTO stories (title,settings,storyText,imageURL,iscompleted,categoryId,userId) VALUES ("This is Story #4","Summer in the Dark alley","Once upon a time there was...","none",False,1,3);
+INSERT INTO stories (title,settings,storyText,imageURL,iscompleted,categoryId,userId) VALUES ("This is Story #5","Raining under the bridge","Once upon a time there was...","none",False,1,4);
+INSERT INTO stories (title,settings,storyText,imageURL,iscompleted,categoryId,userId) VALUES ("This is Story #6","Inside Peter's body","Once upon a time there was...","none",False,3,5);
+INSERT INTO stories (title,settings,storyText,imageURL,iscompleted,categoryId,userId) VALUES ("This is Story #7","At the End of the world","Once upon a time there was...","none",False,2,5);
+INSERT INTO stories (title,settings,storyText,imageURL,iscompleted,categoryId,userId) VALUES ("This is Story #8","At school during finals","Once upon a time there was...","none",False,4,2);
+INSERT INTO stories (title,settings,storyText,imageURL,iscompleted,categoryId,userId) VALUES ("This is Story #9","At Lambeau Field","Once upon a time there was...","none",False,4,3);
+INSERT INTO stories (title,settings,storyText,imageURL,iscompleted,categoryId,userId) VALUES ("This is Story #10","On my chair behind the castle","Once upon a time there was...","none",False,2,1);
 
 INSERT INTO fragments(fragmentText,status,previousId,userId,StoryId) VALUES ("this is my contribution #1",false,0,1,1);
 INSERT INTO fragments(fragmentText,status,previousId,userId,StoryId) VALUES ("this is my contribution #2",false,0,4,1);

@@ -9,6 +9,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" media="screen" href="./css/style.css">
+
+    <script src="js/createFable.js"></script>
 </head>
 
 
@@ -75,21 +77,12 @@
 
         <form>
         <div class="row" id="storyForm">
-                <label for="title">What would you like to call you story?</label>
-                <input type="text" class="title" id="item" placeholder="Title" required>
-                
-                <label for="setting">Where does your story take place? Is this a fantasy world? Alternate dimension? Timeline?</label>
-                <input type="text" class="setting" id="item" placeholder="Setting" required>
-                
-                <label for="genre">Is the fantasy? historical fiction? Mystery? Romance? Sci-fi?</label>
-                <input type="text" class="genre" id="item" placeholder="Genre" required>
-                
-                <label for="opening">Begin your story! Write out a brief two or three paragraph  page to give other users a starting point<br>
-                so that they can add on to your story and write with you!</label>
-                <input type="text-area" class="opening" id="item" placeholder="Opening Page" required>
-                
-                <button type="submit">Create Story!</button>
-        </div>
+            <p>Title : <input type="text" id="title" placeholder="Title" required> </p>
+            <p>Settings :  <input type="text" id="setting" placeholder="Setting" required> </p>             
+            <p>Opening Page :  <input type="text" id="opening" placeholder="Opening Page" required> </p>
+                <div class="dropGenre"> <h3>Choose your genre</h3> : </div><br>
+                <button type="submit" id="createStory">Create Story!</button>
+            </div>
             
          <!--    <div class="row" id="characterForm">
                 <div id="col-md-6">
