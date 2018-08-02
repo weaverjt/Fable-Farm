@@ -34,6 +34,9 @@ module.exports = function (app) {
         res.sendFile(path.join(__dirname, "../public/createFrag.html"))
     })
 
+    app.get("/viewFullStory/:storyId", function (req, res) {
+        res.sendFile(path.join(__dirname, "../public/fullStory.html"))
+    })
 
 
 }
