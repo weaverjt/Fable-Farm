@@ -55,7 +55,11 @@ logoutButton.addEventListener('click', () => {
 // UID is global so it can be accessed anywhere
 var uid = ""
 
+// Firebase monitors the Auth state in real time. Use this if/else statement to do things based on that state.
 firebase.auth().onAuthStateChanged(firebaseUser => {
+<<<<<<< HEAD
+    if (firebaseUser){
+=======
   if (firebaseUser){
 
     //Everything in this if is for a logged in user
@@ -104,22 +108,26 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
   /* 
   firebase.auth().onToggle(firebaseUser => {
     if (toggle == true){
+>>>>>>> 9f7ed6733856a18af20d1f39f6a712fedb3621df
   
       //Everything in this if is for a logged in user
-      console.log("Stories")
-      storyForm.classList.remove('hide')
-      characterForm.classList.add('hide')
+      console.log(firebaseUser)
+      logoutButton.classList.remove('hide')
+     /*  status.innerHTML = 'Status: <span class="status-green">logged in</span>' */
       uid = firebaseUser.uid
-      localStorage.setItem("uid", uid)
+      localStorage.setItem("uid", uid) 
+      console.log("logged in") /* redirect */
   
     } else {
   
       //Everything in this "else" is when no one is logged in
-      console.log('characters')
-      storyForm.classList.add('hide')
-      characterForm.classList.remove('hide')
+      console.log('not logged in')
+      logoutButton.classList.add('hide')
+      /* location.setItem('index.html') ----------------------this isn't working */
+   /*    status.innerHTML = 'Status: <span class="status-red">not logged in</span>' */
     }
-  }) */
+  })
+
 
 var displayError = (message) => {
   console.log('this happened');

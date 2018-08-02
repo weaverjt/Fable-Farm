@@ -9,6 +9,10 @@ var config = {
   };
 
   var uidToExport = "";
+
+  var export1 ={
+    uid : uidToExport
+  }
 // Initialize Firebase
 firebase.initializeApp(config);
 
@@ -35,7 +39,6 @@ const signUpScreenName = document.getElementById('sign-up-displayName');
 /* const signUpButton = document.getElementById('sign-up-button') */
 
 const logoutButton = document.getElementById('logout-button')
-const loginButton = document.getElementById('login-button')
 
 
 const status = document.getElementById('status')
@@ -93,6 +96,11 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
     Cookies.set("uid", uid);
     //Everything in this if is for a logged in user
     console.log(firebaseUser)
+    accountForm.classList.add('hide')
+    loginForm.classList.add('hide')
+    signUpForm.classList.add('hide')
+    logoutButton.classList.remove('hide')
+    authForm.classList.add('hide')
    /*  status.innerHTML = 'Status: <span class="status-green">logged in</span>' */
 
    /* get this out to use for shit later */
@@ -113,8 +121,10 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
 
     //Everything in this "else" is when no one is logged in
     console.log('not logged in')
+    accountForm.classList.remove('hide')
+    loginForm.classList.remove('hide')
+    signUpForm.classList.remove('hide')
     logoutButton.classList.add('hide')
-    loginButton.classList.remove('hide')
  /*    status.innerHTML = 'Status: <span class="status-red">not logged in</span>' */
   }
 })
@@ -129,4 +139,4 @@ var displayError = (message) => {
   }, 2000)
 }
 
-module.exports = uidToExport;
+module.exports = export1;

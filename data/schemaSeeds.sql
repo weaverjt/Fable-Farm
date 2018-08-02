@@ -67,7 +67,10 @@ select * from fragments;
 select * from characters;
 select * from stories;
 select * from users;
+<<<<<<< HEAD
+=======
 
 -- select * from users where userFirebase="0nlF0TcYjBgXIMAEkSLr4xpr4vr1";
 -- select * from users;
 
+>>>>>>> 8488d05dbafc92d653545fbb6d006ec5b2c75380

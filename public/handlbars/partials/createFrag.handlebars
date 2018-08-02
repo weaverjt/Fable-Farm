@@ -1,0 +1,17 @@
+<ul>
+  {{#each fragment}}
+    {{#if approved}}
+      <div id="fragments">
+          {{this.body}}
+      </div>
+    {{/if}}
+  {{/each}}
+</ul>
+<h2>Add a Post</h2>
+<form class="create-form">
+  <div class="form-group">
+    <label for="newFrag">New Post:</label>
+    <input type="text" id="newFrag" name="name">
+  </div>
+  <button id="fragAdd" type="submit">Add Post to Story</button>
+</form>

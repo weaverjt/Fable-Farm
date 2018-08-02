@@ -2,36 +2,35 @@ var db = require("../models");
 
 module.exports = function(app) {
     app.post("/api/story", function(req, res) {
-        db.Story.create(req.body).then(function(dbStory) {  //success
+        db.Story.create(req.body).then(function(dbStory) {
             res.json(dbStory);
         })
     })
 
-    app.delete("/api/story/:id", function(req, res){    //success
+    app.delete("/api/story", function(req, res){
         db.Story.destroy({
             where: {
-                id: req.params.id
+                storyId: req.params.id
             }
         }).then(function(dbStory) {
             res.json(dbStory);
         })
     })
 
-    app.put("/api/story/:id", function(req, res) {          //success
-        db.Story.update(req.body,{
+    app.put("/api/story/:id", function(req, res) {
+        db.Story.update({
             where: {
-                id: req.params.id
+                storyId: req.params.id
             }
         }).then(function(dbStory) {
             res.json(dbStory);
         })
-    })   
+    })
 
-
-    app.get("/api/story/:id", function(req, res) {      //success
+    app.get("/api/story/:id", function(req, res) {
         db.Story.findOne({
             where: {
-                Id:req.params.id
+                storyId: req.params.id
             },
             // include: [{all: true}]
             include : [db.Fragment]
@@ -47,7 +46,7 @@ module.exports = function(app) {
         })
     })
 
-    app.get("/myStories", function(req, res) {          //fail
+    app.get("/myStories", function(req, res) {
         db.Story.findAll({
             where: {
                 userId: req.params.userId
