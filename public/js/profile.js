@@ -9,22 +9,25 @@ $(document).ready(function () {
 
     var userUId = $.cookie('uid');
     var userId = $.cookie('userId');
+    var userImg = $.cookie('userImg');
     console.log("userId cookie is: ", userId);
 
     if (userUId) {
         console.log(userUId);
         $.get("/api/uid/" + userUId).then(
             function (data) {
+                console.log(data);
                 console.log(" id for this user is : ", data.id);
                 id = data.id;
                 name = data.userName;
                 imageUrl = data.imageURL;
                 // create cookie userId for all the pages
                 $.cookie('userId', data.id, { expires: 7, path: '/' });
+                $.cookie('userImg', imageUrl, {expires: 7, path: '/'});
                 $("#profile").html(`<h3>Welcome ${name} </h3>`)
 
                 RetrieveUserInfo(id);
-                $("#userImg").attr("src", imageUrl);
+                $("#userImg").attr("src", $.cookie('userImg'));
             })
 
     }
