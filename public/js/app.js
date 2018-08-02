@@ -52,6 +52,10 @@ const userJumbo = document.getElementById('userJumbo')
 
 
 //forgotten id
+forgottenId.addEventListener('click', () => {
+  console.log("Sucks, don't it.")
+  alert("That sucks...")
+})
 
 
 
@@ -115,7 +119,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
    userJumbo.classList.remove('hide')
     
     localStorage.setItem("uid", uid)
-
+    
   if (creatingNewUser && signUpScreenName.value !== "") {
 
       $.post("/api/user", {userName: signUpScreenName.value, userFirebase: uid, imageURL: signUpImgUrl.value}, function(data) {

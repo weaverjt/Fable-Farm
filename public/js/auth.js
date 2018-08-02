@@ -20,6 +20,9 @@ const errors = document.getElementById('errors')
 const logoutButton = document.getElementById('logout-button')
 const loginButton = document.getElementById('login-button')
 
+//dev nav link
+const aboutDev = document.getElementById('aboutDev')
+
 //for the jumbotron
 const farmJumbo = document.getElementById('farmJumbo')
 const userJumbo = document.getElementById('userJumbo')
@@ -50,6 +53,7 @@ const characterForm = document.getElementById('characterForm') */
 logoutButton.addEventListener('click', () => {
     console.log("Log out was clicked")
     auth.signOut()
+    location.replace('login.html')
   })
   
 // UID is global so it can be accessed anywhere
@@ -62,10 +66,15 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
     console.log(firebaseUser)
    /*  status.innerHTML = 'Status: <span class="status-green">logged in</span>' */
 
-   /* get this out to use for shit later */
+   //switches around jumbotron to reflect auth status
    farmJumbo.classList.add('hide')
    userJumbo.classList.remove('hide')
 
+    /* hides the dev nav link if no one is signed in
+    ---we'll use the about button in the fable farm jumbo until someone logs in */
+   aboutDev.classList.remove('hide') 
+
+   //this hides/shows login/logout based on auth
    loginButton.classList.add('hide')
    logoutButton.classList.remove('hide')
    
@@ -76,9 +85,15 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
 
     //Everything in this "else" is when no one is logged in
     console.log('not logged in')
+    //switches around jumbotron to reflect auth status
     farmJumbo.classList.remove('hide')
     userJumbo.classList.add('hide')
 
+    /* hides the dev nav link if no one is signed in
+    ---we'll use the about button in the fable farm jumbo until someone logs in */
+    aboutDev.classList.add('hide')
+
+    //this hides/shows login/logout based on auth
     logoutButton.classList.add('hide')
     loginButton.classList.remove('hide')
  /*    status.innerHTML = 'Status: <span class="status-red">not logged in</span>' */
