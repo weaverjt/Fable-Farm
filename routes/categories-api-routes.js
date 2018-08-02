@@ -18,7 +18,7 @@ var db = require("../models");
 
 module.exports = function (app) {
 
-    app.get("/api/category", function (req, res) {
+    app.get("/api/category", function (req, res) {      //success
         db.Category.findAll({
             
         }).then(function (dbCharacter) {
@@ -28,7 +28,7 @@ module.exports = function (app) {
 
     //success
 
-    app.get("/api/category/:catId", function (req, res) {
+    app.get("/api/category/:catId", function (req, res) {  //success
         db.Category.findOne({
             where: {
                 id: req.params.catId

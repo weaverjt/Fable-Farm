@@ -30,6 +30,19 @@ module.exports = function(app) {
             res.json(dbUser)
         })
     })
+    //get One User firebase
+    app.get("/api/uid/:uid", function(req, res) {              //success
+        db.User.findOne({
+            where: {
+                userFirebase:req.params.uid
+            },
+            // include: [{all: true}]
+            include : [db.Story,db.Character,db.Fragment]
+        }).then(function(dbUser) {
+            res.json(dbUser)
+        })
+    })
+
     //update
     app.put("/api/user/:id", function(req, res) {          //success
         db.User.update(req.body,{
