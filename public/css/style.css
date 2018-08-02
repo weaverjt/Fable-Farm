@@ -10,8 +10,14 @@
 
 /* jumbo css */
 
-.jumbotron{
-
+.jumbotron {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    color: black;
+    background-color: #79abd2;
+    margin-top: 10px;
+    max-height: 235px;
 }
 
 #jumboAbout{
@@ -21,9 +27,47 @@
 #jumboUser{
 
 }
+.jumbotron p {
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: 200;
+    width: 400px;
+    margin-left: 25px;
+}
+.card{ 
+}
 
-.card{
-align-items: stretch; 
+#userName {
+    background-color: #818181;
+    font-weight: bolder;
+    padding-top: 10px;
+    padding-left: 45px;
+    width: 190px;
+    height: 190px;
+    display: flex;
+    z-index: 0;
+    margin-left: -85px;
+}
+
+.card-text{
+    font: 16px;
+}
+
+.card-img-top{
+    margin-top: 45px;
+    width: 150px;
+    height: 150px;
+    margin-left: -170px;
+    z-index: 1;
+}
+
+#aboutBtn{
+    margin-top: 135px;
+}
+
+.col-md-6 {
+    width: auto;
+    display: flex;
 }
 
 h1{
