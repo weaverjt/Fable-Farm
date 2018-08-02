@@ -19,7 +19,11 @@ module.exports = function(app) {
     })
 
     app.get("/create", function(req, res) {
-        res.sendFile(path.join(__dirname + "../public/createFable.html"))
+        res.sendFile(path.join(__dirname, "../public/createFable.html"))
+    })
+
+    app.get("/createStory", function(req, res) {
+        res.sendFile(path.join(__dirname, "../public/test-api.html"))
     })
 
 

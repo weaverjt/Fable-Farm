@@ -18,6 +18,20 @@ module.exports = function(app) {
             res.json(dbUser)
         })
     })
+    //get One User firebase
+    app.get("/api/users/:UID", function(req, res) {              //success
+        db.User.findOne({
+            where: {
+                userfirebase:req.params.UID
+            },
+            // include: [{all: true}]
+       
+        }).then(function(dbUser) {
+            res.json(dbUser)
+        })
+    })
+
+
     //update
     app.put("api/user/:id", function(req,res) {
         db.User.update(

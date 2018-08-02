@@ -32,9 +32,17 @@ module.exports = function(app) {
             where: {
                 storyId: req.params.id
             },
-            include: [{all:true}]
+            // include: [{all: true}]
+            include : [db.Fragment]
         }).then(function(dbStory) {
-            res.json(dbStory);
+            res.json(dbStory)
+        })
+    })
+
+    app.get("/api/stories", function(req, res) {      //success
+        db.Story.findAll({include: [db.Category]
+        }).then(function(dbStory) {
+            res.json(dbStory)
         })
     })
 

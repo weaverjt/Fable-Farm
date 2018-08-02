@@ -3,7 +3,9 @@ module.exports = function(sequelize, DataTypes) {
       // Giving the Author model a name of type STRING
       storyText : DataTypes.STRING,
       imageURL : DataTypes.STRING,
-      isCompleted : DataTypes.BOOLEAN,
+      isCompleted : {type: DataTypes.BOOLEAN,defaultValue: false, allowNull: false  },
+      title :   DataTypes.STRING,
+      settings: DataTypes.STRING,
 
     });
 
