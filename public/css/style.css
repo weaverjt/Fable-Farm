@@ -30,6 +30,10 @@ h1{
 
 }
 
+#storyList th {
+    text-align: left;
+}
+
     
 /* The navigation bar */
     .sidenav {
