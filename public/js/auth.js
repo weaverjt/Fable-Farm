@@ -1,12 +1,12 @@
 // Firebase config
 var config = {
-    apiKey: "AIzaSyAPKqSS7V9aSDRqoFDjEuHYtTmWQ6kf9KA",
-    authDomain: "fable-farm.firebaseapp.com",
-    databaseURL: "https://fable-farm.firebaseio.com",
-    projectId: "fable-farm",
-    storageBucket: "",
-    messagingSenderId: "759325583688"
-  };
+  apiKey: "AIzaSyAPKqSS7V9aSDRqoFDjEuHYtTmWQ6kf9KA",
+  authDomain: "fable-farm.firebaseapp.com",
+  databaseURL: "https://fable-farm.firebaseio.com",
+  projectId: "fable-farm",
+  storageBucket: "",
+  messagingSenderId: "759325583688"
+};
 // Initialize Firebase
 firebase.initializeApp(config);
 
@@ -48,33 +48,33 @@ const characterForm = document.getElementById('characterForm') */
 
 // Log out
 logoutButton.addEventListener('click', () => {
-    console.log("Log out was clicked")
-    console.log("remove cookies!!!");
-    $.removeCookie('userId'); // remove cookie
-    $.removeCookie('uid');
-    auth.signOut()
-    location.reload(); //refresh page
-  })
-  
+  console.log("Log out was clicked")
+  console.log("remove cookies!!!");
+  $.removeCookie('userId'); // remove cookie
+  $.removeCookie('uid');
+  auth.signOut()
+  location.reload(); //refresh page
+})
+
 // UID is global so it can be accessed anywhere
 var uid = ""
 
 firebase.auth().onAuthStateChanged(firebaseUser => {
-  if (firebaseUser){
+  if (firebaseUser) {
 
     //Everything in this if is for a logged in user
     console.log(firebaseUser)
-   /*  status.innerHTML = 'Status: <span class="status-green">logged in</span>' */
+    /*  status.innerHTML = 'Status: <span class="status-green">logged in</span>' */
 
-   /* get this out to use for shit later */
-   farmJumbo.classList.add('hide')
-   userJumbo.classList.remove('hide')
+    /* get this out to use for shit later */
+    farmJumbo.classList.add('hide')
+    userJumbo.classList.remove('hide')
 
-   loginButton.classList.add('hide')
-   logoutButton.classList.remove('hide')
-   
+    loginButton.classList.add('hide')
+    logoutButton.classList.remove('hide')
+
     uid = firebaseUser.uid
-    localStorage.setItem("uid", uid) 
+    localStorage.setItem("uid", uid)
 
   } else {
 
@@ -85,10 +85,10 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
 
     logoutButton.classList.add('hide')
     loginButton.classList.remove('hide')
- /*    status.innerHTML = 'Status: <span class="status-red">not logged in</span>' */
+    /*    status.innerHTML = 'Status: <span class="status-red">not logged in</span>' */
   }
 })
- 
+
 
 /*   
   // create new story
@@ -104,26 +104,26 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
     })
   
    */
-  
-  /* 
-  firebase.auth().onToggle(firebaseUser => {
-    if (toggle == true){
-  
-      //Everything in this if is for a logged in user
-      console.log("Stories")
-      storyForm.classList.remove('hide')
-      characterForm.classList.add('hide')
-      uid = firebaseUser.uid
-      localStorage.setItem("uid", uid)
-  
-    } else {
-  
-      //Everything in this "else" is when no one is logged in
-      console.log('characters')
-      storyForm.classList.add('hide')
-      characterForm.classList.remove('hide')
-    }
-  }) */
+
+/* 
+firebase.auth().onToggle(firebaseUser => {
+  if (toggle == true){
+ 
+    //Everything in this if is for a logged in user
+    console.log("Stories")
+    storyForm.classList.remove('hide')
+    characterForm.classList.add('hide')
+    uid = firebaseUser.uid
+    localStorage.setItem("uid", uid)
+ 
+  } else {
+ 
+    //Everything in this "else" is when no one is logged in
+    console.log('characters')
+    storyForm.classList.add('hide')
+    characterForm.classList.remove('hide')
+  }
+}) */
 
 var displayError = (message) => {
   console.log('this happened');
