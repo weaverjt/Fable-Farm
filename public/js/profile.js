@@ -57,7 +57,7 @@ $(document).ready(function () {
     else {
         alert("no user sign-in, no profile to display!");
         console.log("error sign-in");
-        location.replace('login.html')
+        window.location.replace('login.html')
     }
 
 
