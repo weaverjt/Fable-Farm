@@ -45,6 +45,8 @@ const accountForm = document.getElementById('accountForm')
 const toDoList = document.getElementById('to-do-list')
 
 // Log in
+$.removeCookie('uid'); // remove cookie
+$.removeCookie('userId'); // remove cookie
 loginForm.addEventListener('click', e => {
   console.log('log in was clicked');
   e.preventDefault()
@@ -73,7 +75,10 @@ $("#newUserBtn").on('click', e => {
 // Log out
 logoutButton.addEventListener('click', () => {
   console.log("Log out was clicked")
+  $.removeCookie('userId'); // remove cookie
+  $.removeCookie('uid');
   auth.signOut()
+  
 })
 
 // UID is global so it can be accessed anywhere

@@ -31,18 +31,17 @@ module.exports = function(app) {
         })
     })
     //get One User firebase
-    app.get("/api/users/:UID", function(req, res) {              //success
+    app.get("/api/uid/:uid", function(req, res) {              //success
         db.User.findOne({
             where: {
-                userfirebase:req.params.UID
+                userFirebase:req.params.uid
             },
             // include: [{all: true}]
-       
+            include : [db.Story,db.Character,db.Fragment]
         }).then(function(dbUser) {
             res.json(dbUser)
         })
     })
-
 
     //update
     app.put("/api/user/:id", function(req, res) {          //success
