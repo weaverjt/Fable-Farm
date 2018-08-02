@@ -49,7 +49,11 @@ const characterForm = document.getElementById('characterForm') */
 // Log out
 logoutButton.addEventListener('click', () => {
     console.log("Log out was clicked")
+    console.log("remove cookies!!!");
+    $.removeCookie('userId'); // remove cookie
+    $.removeCookie('uid');
     auth.signOut()
+    location.reload(); //refresh page
   })
   
 // UID is global so it can be accessed anywhere

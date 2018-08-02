@@ -85,9 +85,9 @@ $("#newUserBtn").on('click', e => {
 
 // Log out
 logoutButton.addEventListener('click', () => {
+
   console.log("Log out was clicked")
-  $.removeCookie('userId'); // remove cookie
-  $.removeCookie('uid');
+
   auth.signOut()
   
 })
@@ -104,6 +104,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
     Cookies.set("uid", uid);
     //Everything in this if is for a logged in user
     console.log(firebaseUser)
+
    /*  status.innerHTML = 'Status: <span class="status-green">logged in</span>' */
 
    /* login-auth-status hide/show code */

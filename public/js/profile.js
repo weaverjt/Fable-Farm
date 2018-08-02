@@ -3,6 +3,7 @@ let name;
 
 
 $(document).ready(function(){
+    $("#profile").empty();
     console.log("Hello Profile");
      
     var userUId=$.cookie('uid');
@@ -17,6 +18,9 @@ $(document).ready(function(){
         console.log(" id for this user is : ", data.id);
         id=data.id; 
         name=data.userName;
+        // create cookie userId for all the pages
+        $.cookie('userId', data.id, { expires: 7, path: '/' });
+        $("#profile").html(`<h3>Welcome ${name} </h3>`)
 
         RetrieveUserInfo(id);
         })
@@ -49,6 +53,9 @@ function RetrieveUserInfo(id) {
     $.get("/api/users/"+id,function(data){
         console.log(data);
 
+        // set picture in profile
+
+        $(".card-img-top").attr('src',data.imageURL);
     for (var c in data.Characters)
     {
         $("#charContainer").append(`<p>we found :  ${data.Characters[c].charName} as a character</p>`)
