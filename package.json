@@ -4,6 +4,7 @@
   "description": "2nd Group Project for U of M Coding Bootcamp, created by Edison Yang, Kevin Monahan, Cary Mclaughlin, and Jacob Weaver.",
   "main": "index.js",
   "scripts": {
+    "start":"node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
