@@ -86,18 +86,18 @@
                         <div class="col-md-6">
                             <!-- farm title/logo -->
                             <h4 class="card-title" id="userName"></h4>
-                            <img class="card-img-top" src="" alt="Card image">
+                            <img id="userImg" class="card-img-top" src="" alt="Card image">
 
                         </div>
                         <div class="col-md-6">
                             <div class="card-body">
                                 <p class="card-text" id="userDate">
-                                <!-- account created on this date********* -->
-                                2/30/1992
+                                    <!-- account created on this date********* -->
+                                    2/30/1992
                                 </p>
                             </div>
                         </div>
-                      <!--
+                        <!--
                         Could include extra info here...later...
 
                         <div class="col-md-6" id="aboutBtn">
@@ -109,66 +109,89 @@
             </div>
         </div>
 
-<!-- Profile page content -->
+        <div id="profile">You are not logged or unrecognized userId</div>
+        <hr>
+        <div id="charContainer"></div>
+        <hr>
+        <div id="storyContainer"></div>
+        <hr>
+        <div id="fragContainer"></div>
+        <hr>
+        <br>
+        <br>
+        <!-- ____________________________ -->
 
-        <div class="container" id="profContent">
-                <div class="row">
-                    <div class="col-md-12">
-                            <label for="myStoryList">My Stories</label>
-                        <table class="table table-striped" style="height: 100%" id="myStoryList">
-                            <thead class="thead-dark">
-                                <tr>
-                                    <th scope="col" class="col-md-2">Title</th>
-                                    <th scope="col" class="col-md-2">Settings</th>
-                                    <th scope="col" class="col-md-4">Opening</th>
-                                    <th scope="col" class="col-md-1">Category</th>
-                                    <th scope="col" class="col-md-1">Contribute</th>
-                                    <th scope="col" class="col-md-2">Full Story</th>
-                                </tr>
-                            </thead>
-                            <tbody style="line-height: 30px">
-                            </tbody>
-                        </table>
-                    </div>
+        <!-- ____________________________ -->
+
+        <div class="container" id="myStuff">
+            <!-- My stories -->
+            <div class="row">
+                <div class="col-md-6">
+                    <div id="myStoryList"></div>
                 </div>
     
     </div>
 
+            <!-- My characters -->
+            <div class="row">
+                <div class="col-md-6">
+                    <div>
+                        <u>Your stuff!</u>
+                    </div>
 
-<!-- 
-User's fragments
-    <div class="row">
-    <div class="col-md-6">
-    <label for="myFrags">My Fragments</label>
-    <div id="myFrags"></div>
-    </div>
-    </div>
-    -->
-<!-- 
-User's characters
-    <div class="row">
-    <div class="col-md-6">
-    <div id="myCharacterList"></div>
-    </div>
-    </div> 
-    -->
+                    <!--  <div id="charContainer"></div> -->
+                    <div id="storyContainer"></div>
 
+
+
+                    <!--   <div id="fragContainer"></div> -->
+
+                    <!-- ____________________________ -->
+
+                    <div class="container" id="myStuff">
+                        <!-- User's stories -->
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="myStoryList">My Stories</label>
+                                <div id="myStoryList"></div>
+                            </div>
+                        </div>
+
+                        <!-- User's fragments -->
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="myFrags">My Fragments</label>
+                                <div id="myFrags"></div>
+                            </div>
+                        </div>
+
+                        <!-- 
+        <!-- User's characters
+        <div class="row">
+            <div class="col-md-6">
+
+                    <div id="myCharacterList"></div>
+                </div>
+            </div>
+        </div> -->
 
 </div><!-- end div main -->
 
+                    </div>
 
-    <!-- Errors -->
-    <p id="errors"></p>
+                </div>
+                <!-- Errors -->
+                <p id="errors"></p>
 
-    <!-- Status -->
-    <p id="status"></p>
-
-  
+                <!-- Status -->
+                <p id="status"></p>
 
 
-    <!-- Firebase and app -->
-    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
-    <script src="/js/auth.js" charset="utf-8"></script>
+
+
+                <!-- Firebase and app -->
+                <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+                <script src="/js/auth.js" charset="utf-8"></script>
 
 </body>
 
