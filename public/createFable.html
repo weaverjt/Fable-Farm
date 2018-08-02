@@ -66,15 +66,14 @@
         <div class="col-md-6">
             
           <!--  rounded switch will toggle between new story form and new character form by adding js that will
-            listen to the element and show/hide the character/story forms based on its position 
- -->
-        <label class="Switch" for="Switch">
+            listen to the element and show/hide the character/story forms based on its position -->
+        <!-- <label class="Switch" for="Switch">
             Create New...
         </label> 
             <select name="Switch" id="Switch" data-role="slider">
                     <option value="story">Story</option>
                     <option value="character">Character</option>
-                </select> 
+                </select>  -->
 
         <form>
         <div class="row" id="storyForm">
@@ -85,7 +84,7 @@
                 <button type="submit" id="createStory">Create Story!</button>
             </div>
             
-            <div class="row" id="characterForm">
+         <!--    <div class="row" id="characterForm">
                 <div id="col-md-6">
                 <input type="text" id="item" placeholder="to do item" required>
             </div>
@@ -93,11 +92,12 @@
                     <input type="radio" name="gender" value="male" checked> Male<br>
                      <input type="radio" name="gender" value="female"> Female<br>
                      <input type="radio" name="gender" value="other"> Other
-                </div>
+                </div> 
         
               </div>
               <button type="submit">Create Character!</button>
-            
+            -->
+
             </form>
         </div>
     </div>
@@ -114,7 +114,7 @@
 
     <!-- Firebase and app -->
     <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
-    <script src="auth.js" charset="utf-8"></script>
+    <script src="/js/auth.js" charset="utf-8"></script>
 </body>
 
 </html>
