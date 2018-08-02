@@ -4,16 +4,20 @@ $(document).ready(function(){
          
         console.log(data);
         for (var i in data){
-
-            $("#storyList> tbody").append("<tr><td>" + i + "</td><td>" + data[i].title + "</td><td>" +
-            data[i].settings + "</td><td>" + data[i].storyText + "</td><td>" + data[i].Category.catName 
-            + "</td><td>" + `<button id="createNewFrag">Add To Story</button>"+"</td><td>` + `<button id="story${i+1}-Btn">View Full Story</button>` + "</td></tr>");
+            
+            $("#storyList> tbody").append(`<tr><td class="col-md-2">` + data[i].title + '</td><td class="col-md-2">' +
+            data[i].settings + `</td><td class="col-md-3">` + data[i].storyText + `</td><td class="col-md-1">` + data[i].Category.catName 
+            + `</td><td class="col-md-2">` + `<button class="createNewFrag" value="${i+1}">Add To Story</button></td><td class="col-md-2">`
+            + `<button id="story${i+1}-Btn" class="viewStoryBtn" value="${i+1}">View Full Story</button>` + "</td></tr>");
             
 
         }
 
     });
 })
+
+
+
 
 
 
@@ -25,9 +29,9 @@ $(document).on("click",".viewStoryBtn",function(){
 }
 )
 
-$(document).on("click",".viewStoryBtn",function(){
+$(document).on("click",".createNewFrag",function(){
     event.preventDefault(); 
     var storyID = $(this).val();
-    location.replace(/crateFrag/ + storyID);
+    location.replace(/createFrag/ + storyID);
 }
 )
