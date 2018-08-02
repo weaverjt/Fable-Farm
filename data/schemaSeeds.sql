@@ -8,13 +8,13 @@ INSERT INTO categories (catName) VALUES ("Historical Fiction");
 INSERT INTO categories  (catName) VALUES ("Mystery/Triller");
 INSERT INTO categories (catName) VALUES ("Comedy");
 
-INSERT INTO users (userName,userFirebase,imageURL) VALUES("bob","undefined","<img : none>");
-INSERT INTO users (userName,userFirebase,imageURL) VALUES("billy","undefined","<img : none>");
-INSERT INTO users (userName,userFirebase,imageURL) VALUES("Joe","undefined","<img : none>");
-INSERT INTO users (userName,userFirebase,imageURL) VALUES("Cary","undefined","<img : none>");
-INSERT INTO users (userName,userFirebase,imageURL) VALUES("Jacob","undefined","<img : none>");
-INSERT INTO users (userName,userFirebase,imageURL) VALUES("Kevin","undefined","<img : none>");
-INSERT INTO users (userName,userFirebase,imageURL) VALUES("Eddie","undefined","<img : none>");
+INSERT INTO users (userName,userFirebase,imageURL) VALUES("ChrisHandsome","XPYu09HWP9RlsFFOCgLONJQIsWx1","<img : none>");
+INSERT INTO users (userName,userFirebase,imageURL) VALUES("EdisonY ","lD5O4kT3TfhLVdUAyTbyfXkDSXh2","<img : none>");
+INSERT INTO users (userName,userFirebase,imageURL) VALUES("Paul234","Z8c8voCMZuP0VwoTCUO1MD6TS2W2","<img : none>");
+INSERT INTO users (userName,userFirebase,imageURL) VALUES("Danaerys","ZmW7Dh9ONhPcBgu9Cu3ab5N9Me82","<img : none>");
+INSERT INTO users (userName,userFirebase,imageURL) VALUES("Clark865","6lO3OnVx68NrjP8FH467tXmCCrq2","<img : none>");
+INSERT INTO users (userName,userFirebase,imageURL) VALUES("Billy5453","chN6TafIpGfVOFLfg7PtgdXd54q1","<img : none>");
+INSERT INTO users (userName,userFirebase,imageURL) VALUES("John415","dqYf5tx97MRcHTZk9IQM9A2PLCp2","<img : none>");
 
 -- INSERT INTO characters (charName,stories,userId) VALUES ("Hulk", "this is the story about Hulk",2);
 -- INSERT INTO characters (charName,stories,userId) VALUES ("SpongeBob", "this is the story about SpongeBob",3);
@@ -62,8 +62,15 @@ INSERT INTO fragments(fragmentText,status,previousId,userId,StoryId) VALUES ("th
 INSERT INTO fragments(fragmentText,status,previousId,userId,StoryId) VALUES ("this is my contribution #17",false,0,1,6);
 INSERT INTO fragments(fragmentText,status,previousId,userId,StoryId) VALUES ("this is my contribution #18",false,0,1,7);
 
-
+insert into users (userName,userFirebase) values ("billy","0nlF0TcYjBgXIMAEkSLr4xpr4vr1");
 select * from fragments;
 select * from characters;
 select * from stories;
 select * from users;
+<<<<<<< HEAD
+=======
+
+-- select * from users where userFirebase="0nlF0TcYjBgXIMAEkSLr4xpr4vr1";
+-- select * from users;
+
+>>>>>>> 8488d05dbafc92d653545fbb6d006ec5b2c75380

@@ -40,7 +40,7 @@ function SetDropDownCat()
         settings : $("#setting").val().trim(),
         storyText : $("#opening").val().trim(),
         CategoryId : $("#drpCat option:selected").val().trim(),
-        UserId : 3 , //value by default , will change when UID firebase available!!!
+        UserId : $.cookie('userId'), //value by default , will change when UID firebase available!!!
         imageURL : "<none>",
     }
 

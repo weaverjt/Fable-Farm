@@ -1,10 +1,19 @@
+//var firebaseId = require("./app");
+//https://github.com/carhartl/jquery-cookie
 
-
-var firebaseId = require("./app");
-var UID = firebaseId.uid
-
-
-
+$(document).ready(function(){
+    console.log("hello world");
+    SetDropDownUser();
+    SetDropDownCat();
+   
+    var userUId=$.cookie('uid');
+    console.log(userUId);
+    $.removeCookie('uid'); // remove cookie
+    $.get("/api/uid/"+userUId,function(data){
+        console.log(" id for this user is : ", data.id);
+        $.cookie('userId', data.id, { expires: 7, path: '/' }); // create a cookie of userid for all the pages.
+})
+})
 
 function SetDropDownUser()
 {
