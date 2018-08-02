@@ -1,32 +1,31 @@
 
-$(document).on("click","#submitFrag",function(){
+$(document).on("click", "#submitFrag", function () {
 
-    var userId=$.cookie('userId')
+    var userId = $.cookie('userId')
 
-    if(userId) {
+    if (userId) {
         console.log("submit yeaaahhh");
-        var data={
+        var data = {
             UserId: userId,
             StoryId: $("#storyId").val().trim(),
-            fragmentText:$("#fragText").val().trim(),
+            fragmentText: $("#fragText").val().trim(),
             status: $("#status option:selected").val(),
-    
+
         };
-    
+
         console.log(data);
-    
+
         $.ajax({
             method: "POST",
             url: "/api/fragment/",
-            data : data
-          })
-            .then(function() {
-             console.log(" Post added");
+            data: data
+        })
+            .then(function () {
+                console.log(" Post added");
             });
     }
 
-    else
-    {
+    else {
         alert("you are not logged in , please log-in first");
         window.location.href("/login");
     }
