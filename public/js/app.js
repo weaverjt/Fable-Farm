@@ -52,6 +52,10 @@ const userJumbo = document.getElementById('userJumbo')
 
 
 //forgotten id
+forgottenId.addEventListener('click', () => {
+  console.log("Sucks, don't it.")
+  alert("That sucks...")
+})
 
 
 
