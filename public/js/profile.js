@@ -24,7 +24,7 @@ $(document).ready(function () {
                 // create cookie userId for all the pages
                 $.cookie('userId', data.id, { expires: 7, path: '/' });
                 $.cookie('userImg', imageUrl, {expires: 7, path: '/'});
-                $("#profile").html(`<h3>Welcome ${name} </h3>`)
+                $("#profile").html(`<h2>Welcome ${name} </h2>`)
 
                 RetrieveUserInfo(id);
                 $("#userImg").attr("src", $.cookie('userImg'));
