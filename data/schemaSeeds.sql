@@ -16,13 +16,6 @@ INSERT INTO users (userName,userFirebase,imageURL) VALUES("Clark865","6lO3OnVx68
 INSERT INTO users (userName,userFirebase,imageURL) VALUES("Billy5453","chN6TafIpGfVOFLfg7PtgdXd54q1","https://tse2.mm.bing.net/th?id=OIP.Fwtvbv_Mn-b5fUXuincIkwHaGw&pid=15.1&P=0&w=165&h=151");
 INSERT INTO users (userName,userFirebase,imageURL) VALUES("John415","dqYf5tx97MRcHTZk9IQM9A2PLCp2","https://tse4.mm.bing.net/th?id=OIP.NhCYta1M0tL5FW4EPhjSEAHaKC&pid=15.1&P=0&w=300&h=300");
 
--- INSERT INTO characters (charName,stories,userId) VALUES ("Hulk", "this is the story about Hulk",2);
--- INSERT INTO characters (charName,stories,userId) VALUES ("SpongeBob", "this is the story about SpongeBob",3);
--- INSERT INTO characters (charName,stories,userId) VALUES ("Bart Simpson", "this is the story about Bart Simpson",2);
--- INSERT INTO characters (charName,stories,userId) VALUES ("Dracula", "this is the story about Dracula",4);
--- INSERT INTO characters (charName,stories,userId) VALUES ("Mickey Mouse", "this is the story about Mickey Mouse",5);
--- INSERT INTO characters (charName,stories,userId) VALUES ("Donal Trump", "this is the story about Donald Trump",1);
--- INSERT INTO characters (charName,stories,userId) VALUES ("Magic Johnson", "this is the story about Magic Johnson",2);
 
 INSERT INTO characters (charName,userId) VALUES ("Hulk",2);
 INSERT INTO characters (charName,userId) VALUES ("SpongeBob",3);
