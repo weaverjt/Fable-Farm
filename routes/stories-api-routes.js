@@ -33,8 +33,8 @@ module.exports = function(app) {
             where: {
                 Id:req.params.id
             },
-            // include: [{all: true}]
-            include : [db.Fragment]
+            include: [{all: true}]
+           //include : [db.Fragment,db.User]
         }).then(function(dbStory) {
             res.json(dbStory)
         })
