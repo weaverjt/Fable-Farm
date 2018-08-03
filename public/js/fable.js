@@ -20,14 +20,14 @@ $(document).ready(function () {
 $(document).on("click", ".viewStoryBtn", function () {
     event.preventDefault();
     var storyID = $(this).val();
-    location.replace(/stories/ + storyID);
+    location.replace("/viewFullStory/storyid#" + storyID);
 }
 )
 
 $(document).on("click", ".createNewFrag", function () {
     event.preventDefault();
     var storyID = $(this).val();
-    location.replace(/createFrag/ + storyID);
+    location.replace("/createFrag/storyId#" + storyID);
 }
 )
 

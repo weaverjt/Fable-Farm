@@ -104,67 +104,54 @@
 
                     </div>
                 </div>
+
+
+
             </div>
         </div>
 
         <div id="profile">You are not logged or unrecognized userId</div>
-        <hr>
-        <div id="charContainer"></div>
-        <hr>
-        <div id="storyContainer"></div>
-        <hr>
-        <div id="fragContainer"></div>
-        <hr>
-        <br>
-        <br>
-        <!-- ____________________________ -->
-
-        <!-- ____________________________ -->
 
         <div class="container" id="myStuff">
-            <!-- My stories -->
-            <div class="row">
-                <div class="col-md-6">
-                    <div id="myStoryList"></div>
-                </div>
-    
-    </div>
 
-            <!-- My characters -->
-            <div class="row">
-                <div class="col-md-6">
-                    <div>
-                        <u>Your stuff!</u>
+
+
+            <div class="container" id="myStuff">
+                <!-- User's stories -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div id="userStories">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <table class="table table-striped" style="height: 100%" id="myStoryList">
+                                        <thead class="thead-dark">
+                                            <tr>
+                                                <th scope="col" class="col-md-2">Title</th>
+                                                <th scope="col" class="col-md-2">Settings</th>
+                                                <th scope="col" class="col-md-5">Opening</th>
+                                                <th scope="col" class="col-md-1">Category</th>
+                                                <th scope="col" class="col-md-2">Full Story</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody style="line-height: 30px">
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                </div>
 
-                    <!--  <div id="charContainer"></div> -->
-                    <div id="storyContainer"></div>
+                <!-- User's fragments -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="myFrags">My Fragments</label>
+                        <div id="myFrags"></div>
+                    </div>
+                </div>
 
 
-
-                    <!--   <div id="fragContainer"></div> -->
-
-                    <!-- ____________________________ -->
-
-                    <div class="container" id="myStuff">
-                        <!-- User's stories -->
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label for="myStoryList">My Stories</label>
-                                <div id="myStoryList"></div>
-                            </div>
-                        </div>
-
-                        <!-- User's fragments -->
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label for="myFrags">My Fragments</label>
-                                <div id="myFrags"></div>
-                            </div>
-                        </div>
-
-                        <!-- 
-        <!-- User's characters
+                <!-- User's characters
         <div class="row">
             <div class="col-md-6">
 
@@ -173,23 +160,20 @@
             </div>
         </div> -->
 
-</div><!-- end div main -->
 
-                    </div>
+            </div>
+            <!-- Errors -->
+            <p id="errors"></p>
 
-                </div>
-                <!-- Errors -->
-                <p id="errors"></p>
-
-                <!-- Status -->
-                <p id="status"></p>
+            <!-- Status -->
+            <p id="status"></p>
 
 
 
 
-                <!-- Firebase and app -->
-                <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
-                <script src="/js/auth.js" charset="utf-8"></script>
+            <!-- Firebase and app -->
+            <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+            <script src="/js/auth.js" charset="utf-8"></script>
 
 </body>
 

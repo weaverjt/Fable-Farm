@@ -32,6 +32,8 @@ const userJumbo = document.getElementById('userJumbo')
 const myStoryList = document.getElementById('myStoryList')
 const myCharacterList = document.getElementById('myCharacterList')
 
+$("#userImg").attr("src", $.cookie('userImg'));
+
 /* This is for the Create page */
 /* const storyForm = document.getElementById('storyForm')
 const characterForm = document.getElementById('characterForm') */
@@ -55,6 +57,7 @@ logoutButton.addEventListener('click', () => {
   console.log("remove cookies!!!");
   $.removeCookie('userId'); // remove cookie
   $.removeCookie('uid');
+  $.removeCookie("userImg");
   auth.signOut()
   location.reload(); //refresh page
 })
