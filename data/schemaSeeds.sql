@@ -31,7 +31,8 @@ INSERT INTO stories (title,settings,storyText,imageURL,iscompleted,categoryId,us
 INSERT INTO stories (title,settings,storyText,imageURL,iscompleted,categoryId,userId) VALUES ("This is Story #4","Summer in the Dark alley","Once upon a time there was...","none",False,1,3);
 INSERT INTO stories (title,settings,storyText,imageURL,iscompleted,categoryId,userId) VALUES ("This is Story #5","Raining under the bridge","Once upon a time there was...","none",False,1,4);
 INSERT INTO stories (title,settings,storyText,imageURL,iscompleted,categoryId,userId) VALUES ("This is Story #6","Inside Peter's body","Once upon a time there was...","none",False,3,5);
-INSERT INTO stories (title,settings,storyText,imageURL,iscompleted,categoryId,userId) VALUES ("This is Story #7","At the End of the world","Once upon a time there was...","none",False,2,5);
+INSERT INTO stories (title,settings,storyText,imageURL,iscompleted,categoryId,userId) VALUES ("The Escape #7","In The far country of WestBrookTown, when the winter just begins...","Sam an old Veteran World war II
+,woke up from his injuries and suddently...","none",False,7,2);
 INSERT INTO stories (title,settings,storyText,imageURL,iscompleted,categoryId,userId) VALUES ("This is Story #8","At school during finals","Once upon a time there was...","none",False,4,2);
 INSERT INTO stories (title,settings,storyText,imageURL,iscompleted,categoryId,userId) VALUES ("This is Story #9","At Lambeau Field","Once upon a time there was...","none",False,4,3);
 INSERT INTO stories (title,settings,storyText,imageURL,iscompleted,categoryId,userId) VALUES ("This is Story #10","On my chair behind the castle","Once upon a time there was...","none",False,2,1);
@@ -54,6 +55,34 @@ INSERT INTO fragments(fragmentText,status,previousId,userId,StoryId) VALUES ("th
 INSERT INTO fragments(fragmentText,status,previousId,userId,StoryId) VALUES ("this is my contribution #16",false,0,2,5);
 INSERT INTO fragments(fragmentText,status,previousId,userId,StoryId) VALUES ("this is my contribution #17",false,0,1,6);
 INSERT INTO fragments(fragmentText,status,previousId,userId,StoryId) VALUES ("this is my contribution #18",false,0,1,7);
+
+-- new stories to add ---
+INSERT INTO fragments(fragmentText,status,previousId,userId,StoryId) 
+VALUES ("this is my contribution #18",false,0,1,7);
+INSERT INTO fragments(fragmentText,status,previousId,userId,StoryId) 
+VALUES ("this is my contribution #18",false,0,1,7);
+INSERT INTO fragments(fragmentText,status,previousId,userId,StoryId) 
+VALUES ("this is my contribution #18",false,0,1,7);
+INSERT INTO fragments(fragmentText,status,previousId,userId,StoryId) 
+VALUES ("this is my contribution #18",false,0,1,7);
+INSERT INTO fragments(fragmentText,status,previousId,userId,StoryId) 
+VALUES ("this is my contribution #18",false,0,1,7);
+INSERT INTO fragments(fragmentText,status,previousId,userId,StoryId) 
+VALUES ("this is my contribution #18",false,0,1,7);
+INSERT INTO fragments(fragmentText,status,previousId,userId,StoryId) 
+VALUES ("this is my contribution #18",false,0,1,7);
+INSERT INTO fragments(fragmentText,status,previousId,userId,StoryId) 
+VALUES ("this is my contribution #18",false,0,1,7);
+INSERT INTO fragments(fragmentText,status,previousId,userId,StoryId)
+VALUES ("this is my contribution #18",false,0,1,7);
+INSERT INTO fragments(fragmentText,status,previousId,userId,StoryId) 
+VALUES ("this is my contribution #18",false,0,1,7);
+INSERT INTO fragments(fragmentText,status,previousId,userId,StoryId) 
+VALUES ("this is my contribution #18",false,0,1,7);
+
+
+
+
 
 
 select * from fragments;
