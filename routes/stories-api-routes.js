@@ -58,9 +58,9 @@ module.exports = function(app) {
         })
     })
 
-    app.get("/top10stories", function(req, res) {
+    app.get("/api/top10stories", function(req, res) {
         db.Story.findAll({
-            order: ['id', 'DESC'],
+            order: [['id', 'DESC']],
             limit: 10,
             include: [{all:true}]
         }).then(function(dbStory) {
