@@ -130,7 +130,7 @@ $(document).on("click", ".storiesButtons", function () {
 
     $.get("/api/story/" + newStoryId, function (data) {
 
-        console.log(data);
+        console.log("inside stories",data);
 
         htmlText = `<p>Admin user id : ${data.UserId} - for story Id: ${data.id}</p>`
 

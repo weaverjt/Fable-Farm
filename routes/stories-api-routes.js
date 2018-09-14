@@ -33,8 +33,8 @@ module.exports = function(app) {
             where: {
                 Id:req.params.id
             },
-            // include: [{all: true}]
-            include : [db.Fragment]
+            include: [{all: true}]
+           //include : [db.Fragment,db.User]
         }).then(function(dbStory) {
             res.json(dbStory)
         })
@@ -52,6 +52,16 @@ module.exports = function(app) {
             where: {
                 userId: req.params.userId
             },
+            include: [{all:true}]
+        }).then(function(dbStory) {
+            res.json(dbStory)
+        })
+    })
+
+    app.get("/api/top10stories", function(req, res) {
+        db.Story.findAll({
+            order: [['id', 'DESC']],
+            limit: 10,
             include: [{all:true}]
         }).then(function(dbStory) {
             res.json(dbStory)
